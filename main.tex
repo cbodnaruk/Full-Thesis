@@ -1,0 +1,94 @@
+\documentclass[table,xcdraw]{report}
+
+
+%\usepackage{gentium}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage[xetex]{graphicx} % Required for including pictures
+\usepackage[xetex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+\usepackage{longtable}
+\usepackage{chngpage}
+\usepackage{tocbasic}
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.5} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+
+\usepackage{todonotes}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{verbatim}
+\usepackage{csquotes}
+\usepackage{polyglossia}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{multicol}
+\captionsetup[table]{labelfont=sc,textfont=it,font=small,justification=centering}
+\setdefaultlanguage{english}
+\setotherlanguages{tibetan}
+\setmainfont{Libertinus Serif}
+\newfontfamily\tibetanfont{Microsoft Himalaya}
+\usepackage[backend=biber,style=unified,maxcitenames=2,maxbibnames=99]{biblatex}
+\usepackage{amsmath}
+\usepackage{adjustbox}
+
+\usepackage[edges,linguistics]{forest}
+\usepackage{rotating}
+
+\newcounter{Appendix}
+\newcounter{Figure}
+\bibliography{sources}
+\let \citeNP \cite
+\let \citeA \textcite
+\let \cite \parencite
+\let \citesNP \cites
+\let \cites \parencites
+\let \citesA \textcites
+\let \sc \textsc
+\DeclareNewTOC[%
+  type=map,
+  float,
+  name=Map,
+  listname={List of Maps},
+  ]{map}
+\makeatletter
+  \renewcommand\l@map{\l@figure}
+\makeatother
+\graphicspath{{./figures/}}
+
+\forestset{
+  phylogeny/.style={
+    where n children=0{
+      tier=word
+    }{},
+    nice empty nodes, forked edges, for tree={l=10mm,l sep=10mm, calign=midpoint}
+  }
+}
+
+\title{A Typological Survey of Addressee-perspective in Trans-Himalayan Languages}
+\author{Carl Bodnaruk}
+\date{April 2024}
+\include{commands}
+\usepackage{gb4e}
+
+\let\eachwordone=\it
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\include{Chapter1}
+\include{Chapter2}
+\include{Chapter3}
+\include{Chapter4}
+\include{Chapter5}
+\include{Chapter6}
+\include{Chapter7}
+\include{Appendix}
+\printbibliography
+\end{document}

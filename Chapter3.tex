@@ -1,0 +1,686 @@
+\chapter{Methodology}
+\section{Overview}
+This section describes the data collection and storage methodologies used in this project, specifically the features used to summarise data for analysis. Section \ref{s:Methods:Collection} will discuss the collection of data, including the steps taken to ensure a representative cross-section of the \lfam family. Section \ref{s:Methods:Schema} will address the specific features used to spearate and categorise languages in the analysis.
+
+\todo{proper introduction}
+\todo{think of project as having created a database}
+\section{Collection}\label{s:Methods:Collection}
+\subsection{Developing a Representative Sample}\label{ss:Methods:RepSample}
+Section \ref{s:THOverview:Subfamilies} introduced the set of subfamilies proposed by \citeA{VanDriem2014} to represent a phylogeny-agnostic view of the \lfam\ family. Using this set of subfamilies as a foundation for the selection of languages provides a solid foundation to ensure no language groups are missed, while also avoiding taking a position on the debates in the literature where it is likely not necessary or helpful. That being said, simply selecting languages from each subfamily in equal number will not necessarily solve the issues in representativeness surrounding the statistical studies discussed in Section \ref{s:THOverview:HighLevelStructure}.
+
+\citeA{VanDriem2014}, while reflective of the state of description at its original time of writing, is at risk of being out of date by the current view of the family. For instance, more recent documentation work on Lhokpu, focussing on vocabulary and some verbal and nominal affixation, has suggested that the language is likely closely related to the Dhimalish languages of Dhimal and Toto \cite{Grollmann2018}. In addition to the linguistic evidence, the relationship is fairly easily justified geographically -- Lhokpu is spoken in about three Chiwogs or village blocks (Singye, Sangloong Sangteng, and Thongsa Tobchhenthang) in Bhutan's Samtse Dzongkhag, which are between 15 and 30 kilometres upstream of Totopara in India, where the Toto language is spoken \cite{Basumatary2016}. Both languages are geographically not contigious, however, with Dhimalish, to which, interestingly, \citeA{Grollmann2018} suggest that Lhokpu appears more closely related. \citeA{Grollmann2018} also note that the Dhimalish subfamily including Dhimal and Toto is perhaps not as well proven or established as its inclusion in \citeA{VanDriem2014} might suggest, specifically that many of the shared forms are in fact shared much more widely than just Dhimal and Toto, and might therefore simply represent shared retentions from a much earlier proto-language. The geographic proximity of Lhokpu to Toto may also have little meaning for the historical development of the languages, as \citeA{VanDriem2004} suggests that Lhokpu (or its ancestor) may have at one time been much more widespread across Western Bhutan, and may in fact be a substrate under Dzongkha.
+
+\citeA{Post2017} note that three further subfamilies, all spoken in Arunachal Pradesh in the Eastern Himalayas, remain merely speculative. Van Driem's (2014) Hrusish, Siangic, and Midzuish subfamilies may also not yet be sufficiently proven. While, in every case, there is some level of evidence to support the groupings, Hrusish and Midzuish could to an extent be simply explained by high degrees of contact, and all three subgroups are lacking the level of description necessary to confidently prove any subgroups \cite{Post2017}. \citeA{BlenchPost2014} go even further, questioning whether or not it has been sufficiently proven that Siangic, Hrusish, Midzuish, Digarish, and Kho-Bwa are even \lfam\ languages at all. \citeA{Wu2022} use Bayesian phylogenetic analysis focussing on the languages of Arunachal Pradesh to attempt to shed some light on these groups (excluding the Siangic group, which was not included), and attempt to position them both as members of the family in general, and also in relation to nearby neighbouring languages. They ultimately conclude that they mostly likely are related to the wider \lfam\ family, though diverged very early. Specifically, the Kho-Bwa languages could share a common ancestor to a time-depth of approaching 3000 years before present, similar to that of the Ngwi-Burmese subfamily, and their divergence from their closest related subfamily of the Hrusish languages could have been yet earlier, at around 5500 years before present \cite{Wu2022}.
+
+Van Driem (2014) also groups together the Tibetic and East Bodish groups into a single Bodish subfamily. While it is clear that East Bodish languages are not a subgroup of Tibetic languages \cite{Hyslop2017}, both \citeA{ZhangM2019Baye} and \citeA{ZhangH2020Baye}, as well as wider literature, seem to agree that Tibetic languages and East Bodish languages do in turn share a fairly close common ancestor and can be rightly considered to share a branch. The decision of what level to draw the line at here seems similarly arbitrary as it does with the Ngwi-Burmese subfamily, especially given some uncertainty surrounding the membership of Tshangla in this combined Bodish subfamily \cite{Thurgood2017STIntro}. Largely because of the large amount of literature available on the Tibetic\footnote{The term Tibetic is used here per \citeA{Tournadre2014}.} and East Bodish languages, and the availability of such data and insights to me from Gwendolyn Hyslop as my lead supervisor, East Bodish and Tibetic are separated here, contra \citeA{VanDriem2014}. 
+
+The challenges in producing a representative sample of the languages in the \lfam\ family are a core problem in statistical models of \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}, but are also an issue that must be faced, to some extent in this project. In order to be able to make claims about the \lfam\ family as a whole, an even spread of the languages in the family need to be examined. This selection, however, arguably does not need to be as precise when attempting to analyse a smaller set of languages manually, than with the much larger scale computational analysis undertaken in \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}. That is, this project needs to consider data from the whole family to the extent that clades of divergent or conservative languages are not missed or misinterpreted, but is not attempting to develop any statistical measures of the language family whereby a greater level of coverage in one area might skew results. For example, by virtue of its older academic tradition, there is a much wider field of literature covering specifically Tibetic languages, with specific detail into the field of this project (such as \citesA{Garrett2001}{GarfieldDeVilliers2017}{Woodbury1986}{DeLancey1986}{ZeislerForthcoming}, among countless others), but little more than grammatical sketches in other areas. While this imbalance in available data would be unrepresentative in a statistical analysis, the less quantitative and more qualitative approach of this project allows for a greater ability to account for these potential biases.
+
+While the necessity to build a dataset that is as representative as possible is not nearly as strong with this project as with some others, the methodology by which the subfamilies were selected for \citeA{VanDriem2014} does lend itself to prioritizing smaller, less researched language groups. Because it is focussed on well established subfamilies, and given that language groups with higher levels of research will likely have genetic relationships established to a deeper time depth or to a higher level, we can expect to see large groups of well researched languages given under a single subfamily, while smaller groups of underresearched languages will be listed separately. That is to say, there is not necessarily a similar amount of diversity within each of van Driem's (2014) subfamilies, but that there is likely more diversity in the larger, more widely researched and therefore better established ones.
+
+In practise, the effect of this is visible in the number of languages present in each subfamily, using Glottolog \cite{glottolog} as a guide. At the largest end of the scale is the Ngwi-Burmese subfamily, with 127 languages listed on Glottolog, the majority of which (101) are specifically from the subfamily's Ngwi (Loloish) branch. Behind this, with 54 languages, is the Kukish branch. The language counts for the other subfamilies are given in \tabref{t:Methods:SubfamilyLanguageCount}.
+
+\begin{longtable}{r c}
+    Subfamily & Number of languages \\
+    \hline
+    Lepcha  & 1  \\
+    \hline
+    Meithei & 1   \\
+    \hline
+    Tshangla    & 1  \\
+    \hline
+    Lhokpu\footnote{Recent research suggests that Lhokpu may be closely related to the Dhimalish languages \cite{Grollmann2018}.}  & 1  \\
+    \hline
+    Dura    & 1   \\
+    \hline
+    Black Mountain  & 1  \\
+    \hline
+    Pyu & 1  \\
+    \hline
+    Gongduk & 1   \\
+    \hline
+    Mru\footnote{Some evidence suggests that Hkongso may be more closely related to Mru \cite{Wright2009}.} & 1 \\
+    \hline
+    Tujia\footnote{Glottolog gives north and south varieties, though \citeA{VanDriem2014} only gives one language.}   & 2  \\
+    \hline
+    Magaric & 2  \\
+    \hline
+    Chepangic   & 2   \\
+    \hline
+    Digarish    & 2   \\
+    \hline
+    Raji-Raute  & 2    \\
+    \hline
+    Siangic & 2 \\
+    \hline
+    Midzuish\footnote{Called Kman-Meyor in Glottolog.}    & 2 \\
+    \hline
+    Karbi\footnote{Glottolog gives Hills and Amri varieties, though \citeA{VanDriem2014} only gives one language.}   & 2 \\
+    \hline
+    Hrusish & 2  \\
+    \hline
+    Dhimalish   & 2-3 \\
+    \hline
+    Ersuish & 3   \\
+    \hline
+    Nungish & 3    \\
+    \hline
+    Bái\footnote{Membership of Caijia and Longjia unclear. CITE}    & 3-6  \\
+    \hline
+    Newaric & 5    \\
+    \hline
+    Nàic    & 5    \\
+    \hline
+    East Bodish\footnote{Grouped with Tibetic into ``Bodish'' in \citeA{VanDriem2014}.} & 7    \\
+    \hline
+    Ao  & 7    \\
+    \hline
+    Kho-Bwa & 7 \\
+    \hline
+    Zeme    & 7    \\
+    \hline
+    rGyalrongic & 8   \\
+    \hline
+    Kachinic\footnote{Called Jingpho-Luish in Glottolog}    & 9   \\
+    \hline
+    Tangkhul    & 9  \\
+    \hline
+    Tani    & 10 \\
+    \hline
+    Angami-Pochuri  & 10 \\
+    \hline
+    Qiangic & 12 \\
+    \hline
+    Tamangic    & 13  \\
+    \hline
+    West Himalayish & 15 \\
+    \hline
+    Karenic & 20 \\
+    \hline
+    Sinitic & 26  \\
+    \hline
+    Brahmaputran\footnote{The Glottolog ``Brahmaputran'' branch also includes Kachinic/Jingpho-Luish, which \citeA{VanDriem2014} separates.}    & 29  \\
+    \hline
+    Kiranti & 31 \\
+    \hline
+    Tibetic  & 44  \\
+    \hline
+    Kukish  & 54    \\
+    \hline
+    Ngwi-Burmese & 127 \\
+    \hline
+    \caption{The number of languages in each of van Driem's (2014) subfamilies, per Glottolog \cite{glottolog}.}\label{t:Methods:SubfamilyLanguageCount}
+    \end{longtable}
+
+
+Languages themselves were selected based on available documentation, using Glottolog \cite{glottolog} as a reference database for descriptive work available. To avoid accidentally selecting a particularly abberant language and not properly representing a given subfamily, an initial goal of two languages per subfamily was set. For larger subfamilies, such as Ngwi-Burmese, Kukish, Tibetic, and Kiranti, more languages were surveyed both in an attempt to ensure even coverage of the larger subfamily, as well as because, in general research, more of these languages were referenced and therefore considered.
+
+There were a number of cases where it was possible to even survey two languages in a subfamily. The first case is, of course, the internal isolates discussed in Section \ref{s:THOverview:Subfamilies}. In addition, there are a number of smaller subfamilies which do not have the descriptive coverage to allow two languages to be surveyed. Either there was only one described language in the subfamily, or there were multiple, but only one has any coverage of epistemic marking. This last point poses a problem, in that, in languages with more limited descriptive analyses available, it is difficult to tell if reference to epistemic marking as studied in this project is omitted as it would be outside the scope of the current stage of description, or because it simply does not exist in the language. There were also a small number of subfamilies for which no descriptive data could be found. The first of these, Lhokpu, will be discussed in greater detail below as the opportunity arose in the course of this project to undertake fieldwork in a Lhokpu community in Bhutan and fill the gap in the data (though, as mentioned above, Lhokpu may well be better classified as Dhimalish). Gongduk, another internal isolate spoken in Bhutan \cite{VanDriem2001b}, also had no available data, and neither did the small subfamilies of Raji-Raute, and Midzuish, and Hrusish. For both Hrusish and Midzuish, there is some unpublished sketch grammars by Roger Blench, though these are specifically not for wider use so were not included in the survey. Glottolog also notes a body of descriptive work on Kaman (Midzuish) in Mandarin, which was also not accessible for this project. Black Mountain Mönpa has a sketch grammar by \citeA{Hyslop2016}, which makes no reference to any forms relevant to this project. It is, however, not clear if this is as they do not occur, or simply have not yet been sufficiently described.
+
+With this goal of two languages per subfamily where possible, to be expanded upon after in larger subfamilies, languages were selected by the breadth of description available, as well as the recency of the description. That is, full published grammars were taken over doctoral and masters theses, and newer studies were taken over older ones. Published grammars were preferred as they will have gone through a more complete review process, and are often more in-depth than doctoral and especially masters theses. In any case, regardless of the level of review or detail for the publication, analyses were taken (where no alternative analyses exist, see Sunwar discussed in Section \ref{ss:Description:Conflicts}) to be accurate, and no attempts were made to reanalyse data presented. In some cases, the usage of terminology is discussed in relation to the description provided, and, especially in Section \ref{ss:Description:ClassByFunction} and Chapter \ref{c:Discussion}, theoretical conclusions are drawn about data based on the analysis available, but beyond what is explicitly stated. In this latter case, it is possible that there is further data which would prove wrong the analysis synthesised here, but which were not included in the publication as they were not seen to be necessary by the original author.
+
+Newer studies were preferred as they are more likely to discuss the categories and functions at issue in this project. As discussed in Chapter \ref{c:Introduction}, studies into perspective-marking in \lfam\ languages have become significantly more common over the past two decades, and much of the research undertaken prior to that, and even more so prior to the publication of \citeA{ChafeNichols1986}, either does not consider perspective-marking at all, or does so in a way that is less immediately accessible in the context of contemporary theories and frameworks. That is to say that it is often simply much easier to find the relevant information in a more recent publication.
+
+As was mentioned above, some further data has been used from languages that appear regularly or in relevant places throughout the literature, even if they were not initially selected. In particular, discussions of the epistemic system in Lhasa Tibetan and early Tibetic languages are common throughout the literature (see, for instance, \citesA{DeLancey2012}{Garrett2001}{Hill2012}{Hill2014}{Zemp2021}), an area of study which was particularly relevant to the diachronic considerations discussed in Chapter \ref{c:History}. These languages are in addition to the set of languages surveyed systematically here, and are not listed in \appref{a:TableOfLanguages} as such.
+
+\subsection{Comparison to Proposed Phylogenies}\label{ss:Methods:Bayesian}
+\todo{Note to Gwen and Lila: This section has sort of shifted from my original intention of comparing my sample with the trees presented here, as I wasn't sure how best to visually represent it. I also found I had more to say about the papers methodologically than I initially thought, so it's still a bit of a mess.}
+While, as a result of the uncertainty surround the actual historically accurate phylogeny of the \lfam\ family, it is not possible to compare the sample of languages selected for this project to the actual family to gauge its representativeness (this impossibility of course beign the primary reason for the use of the subfamilies proposed by \citeA{VanDriem2014}), it is possible to compare the sample to the various proposed phylogenies and assess how representative the sample is for each.
+
+Given their disagreement, and the discussion thus far about their methodology, this section will compare the phylogenies provided in \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}. Some other proposed phylogenies, such as that put forward in \citeA{STEDT}, are not included here as they remain largely agnostic about the family's structure outside of a few primary divisions. In Figures \ref{f:Methods:Sagart}-\ref{f:Methods:Zhang2020}, the trees given in their respective sources are reproduced to the subfamily level. That is, the branches are reproduced exactly, but rather than terminating in individual languages (as in \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}), or in other subfamilies, the branches terminate in the equivalent subfamily from the set used in this project given in Table \ref{t:Methods:SubfamilyLanguageCount}. While the branching structure of the subfamilies is accurately reproduced here, the time depth of the various divergences given in the Bayesian analyses is not.
+
+Not every subfamily is represented in every tree, a point which forms part of the criticism of the Bayesian analyses. This occurs for these analyses when a given sample did not include any data from a given subfamily, and therefore does not represent or account for it in the final result. Missing subfamilies for each of \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye} are given in Table \ref{t:Methods:BayesMissingSubfamilies}.
+
+\begin{figure}
+\centering
+\label{f:Methods:Sagart}
+  \scalebox{0.35}{\begin{forest} 
+   phylogeny,
+[\lfam 
+[
+  [,tikz={\node [draw,red,fit to=tree] {};}
+    [Kachinic]
+    [Brahmaputran]
+  ]
+  [Sinitic,tikz={\node [draw,red,fit to=tree] {};}]
+]
+[
+  [
+    [Karbi]
+    [,tikz={\node [draw,red,fit to=tree] {};}
+      [Tangkhul]
+      [Kukish]
+    ]
+  ]
+  [
+    [
+      [Chepang]
+      [
+        [Tshangla]
+        [,tikz={\node [draw,red,fit to=tree] {};}
+          [Tani]
+          [Digarish]
+        ]
+      ]
+      [Kiranti,tikz={\node [draw,red,fit to=tree] {};}]
+    ]
+    [
+      [W. Himalayish,tikz={\node [draw,red,fit to=tree] {};}]
+      [
+        [Nungish]
+        [,tikz={\node [draw,red,fit to=tree] {};}
+          [Tibetic]
+          [
+            [
+              [Qiangic]
+              [rGyalrongic]
+            ]
+            [Ngwi-Burmese]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+]
+\end{forest}}
+\caption{The \lfam\ family as per \citeA{Sagart2019Baye}, showing the positions of the subfamilies used in this project. Branches with over 80\% posterior probability (that is, branches with high confidence, see ) have been marked with a red box. Time depth has not been reproduced in this tree.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \label{f:Methods:Zhang2019}
+    \scalebox{0.3}{\begin{forest} 
+    phylogeny,
+  [\lfam 
+      [Sinitic,tikz={\node [draw,red,fit to=tree] {};}]
+      [
+          [
+            [Karen]
+            [,tikz={\node [draw,red,fit to=tree] {};}
+              [Kukish]
+              [
+                [Ao]
+                [
+                  [
+                    [Tangkhul]
+                    [Zeme]
+                  ]
+                  [Angami-Pochuri]
+                ]
+              ]
+            ]
+          ]
+          [
+            [,tikz={\node [draw,red,fit to=tree] {};}
+              [Kachinic]
+              [Brahmaputran]
+            ]
+            [
+              [
+                [Digarish]
+                [Tani]
+              ]
+              [
+                [
+                  [
+                    [Kiranti]
+                    [,tikz={\node [draw,red,fit to=tree] {};}
+                      [Chepang]
+                      [Magar]
+                    ]
+                  ]
+                  [Nungish,tikz={\node [draw,red,fit to=tree] {};}]
+                ]
+                [
+                  [West Himalayish]
+                  [
+                    [,tikz={\node [draw,red,fit to=tree] {};}
+                      [Tamangic]
+                      [
+                        [Tibetic]
+                        [East Bodish]
+                      ]
+                    ]
+                    [,tikz={\node [draw,red,fit to=tree] {};}
+                      [
+                        [Nàic]
+                        [
+                          [Ersuish]
+                          [
+                            [Qiangic*]
+                            [rGyalrongic*]
+                          ]
+                        ]
+                      ]
+                      [Ngwi-Burmese]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+      ]
+  ]
+  \end{forest}}
+  \caption{The \lfam\ family as per \citeA{ZhangM2019Baye}. *The phylogeny here does not in fact support these two subfamilies, but rather gives two rGyalrongic languages -- rGyalrong Maerkang (glottolog: Situ) and Caodeng (glottolog: Tshobdun) -- as an outgroup to the Qiangic clade, and two others -- Daofu and Ergong Danba (glottolog: both under Stau-dGebshes) are given as members of one of two Qiangic branches. Branches with over 80\% posterior probability have been marked with a red box. Time depth has not been reproduced in this tree.}
+  \end{figure}
+
+  \begin{sidewaysfigure}
+    \centering
+    \label{f:Methods:Zhang2020}
+      \scalebox{0.35}{\begin{forest} 
+phylogeny,
+    [\lfam 
+      [
+        [Sinitic,tikz={\node [draw,red,fit to=tree] {};}]
+        [
+          [,tikz={\node [draw,red,fit to=tree] {};}
+            [Lepcha]
+            [Kiranti]
+          ]
+          [
+            [
+              [W. Himalayish]
+              [
+                [Digarish,tikz={\node [draw,red,fit to=tree] {};}]
+                [,tikz={\node [draw,red,fit to=tree] {};}
+                  [Siangic]
+                  [Tani]
+                ]
+              ]
+            ]
+            [
+              [,tikz={\node [draw,red,fit to=tree] {};}
+                [Kachinic]
+                [Brahmaputran]
+              ]
+              [
+                [Kho-Bwa,tikz={\node [draw,red,fit to=tree] {};}]
+                [Hrusish,tikz={\node [draw,red,fit to=tree] {};}]
+              ]
+            ]
+            [
+              [
+                [
+                  [
+                    [Magaric*]
+                    [Karen,tikz={\node [draw,red,fit to=tree] {};}]
+                  ]
+                  [
+                    [Dhimalish]
+                    [
+                      [Magaric*]
+                      [Chepangic]
+                    ]
+                  ]
+                ]
+                [
+                  [Karbi]
+                  [
+                    [Kukish,tikz={\node [draw,red,fit to=tree] {};}]
+                    [
+                      [Meithei]
+                      [,tikz={\node [draw,red,fit to=tree] {};}
+                        [
+                          [Angami-Pochuri**]
+                          [Ao]
+                        ]
+                        [
+                          [Tangkhul]
+                          [
+                            [Zeme]
+                            [Angami-Pochuri**]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+              [
+                [
+                  [Midzuish]
+                  [Nungish,tikz={\node [draw,red,fit to=tree] {};}]
+                ]
+                [
+                  [
+                    [Tamangic,tikz={\node [draw,red,fit to=tree] {};}]
+                    [
+                      [Tshangla]
+                      [,tikz={\node [draw,red,fit to=tree] {};}
+                        [East Bodish]
+                        [Tibetic]
+                      ]
+                    ]
+                  ]
+                  [
+                    [Tujia]
+                    [
+                      [
+                        [rGyalrongic***]
+                        [,tikz={\node [draw,red,fit to=tree] {};}
+                          [
+                            [Ngwi-Burmese†]
+                            [Ersuish]
+                          ]
+                          [
+                            [Qiangic]
+                            [rGyalrongic***]
+                          ]
+                        ]
+                      ]
+                      [Ngwi-Burmese,tikz={\node [draw,red,fit to=tree] {};}]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+    \end{forest}}
+    \caption{The \lfam\ family as per \citeA{ZhangH2020Baye}. In this analysis, a number of van Driem's (2014) subfamilies are divided, with either single or multiple languages separated from the rest of their subfamily. These have been marked (*, **, ***, †) and are discussed in the text. Branches with over 80\% posterior probability have been marked with a red box. Time depth has not been reproduced in this tree.}
+    \end{sidewaysfigure}
+
+As discussed above, for each of the terminal nodes given in Figures \ref{f:Methods:Sagart}-\ref{f:Methods:Zhang2020} (that is, van Driem's fallen leaves), 1-3 languages has been sampled. While initially the intention of presenting Figures \ref{f:Methods:Sagart}-\ref{f:Methods:Zhang2020} was to compare the representativeness of this project's sample against their proposals for a phylogeny of the \lfam\ family, it is clear from \tabref{t:Methods:BayesMissingSubfamilies} that, in all cases, the coverage of this project is substantially larger, especially in terms of smaller language families or internal isolates. Because \citeA{VanDriem2014} categorised the entire family into generally very fine-grained subfamilies, there are no languages in any of the three studies that cannot be categorised into one of the subfamilies used in this project, and therefore that can initially be seen as gaps in this project's sample. Rather, to identify possible gaps, it is necessary to identify locations where \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye} disagree with \citeA{VanDriem2014}. A number of small disagreements are noted for \citesA{ZhangM2019Baye}{ZhangH2020Baye}
+
+We can also consider areas where van Driem's (2014) larger subgroups are presented as multiple smaller subfamilies in the other data. Namely, \citeA{ZhangM2019Baye} divides the Ngwi-Burmese family into three classifications, diverging approximately 2,000 years ago. Taking these three branches (Loloish, Nusu, Burmish) as separate subfamilies for the sake of representativeness, then the sample for this project contains two Loloish (here: Ngwi) languages, one Burmish language, and no Nusu languages. As is discussed above, the Ngwi-Burmese subfamily is the largest by some margin, which gives som credence to a division into multiple smaller subfamilies, however, when considering the estimated age of the subfamily and using this a proxy for variation across the branch (as much as these two variables are often not correlated CITE), the combined Ngwi-Burmese branch is a similar age to many of the other of van Driem's (2014) subfamilies represented in \citeA{ZhangM2019Baye} (which range from ~750 years old for Tani to ~3,000 years old for Kiranti), as well as in \citeA{ZhangH2020Baye}, in which the subfamilies vary in age from ~500 years old (Ersuish) to ~4,500 years old (West Himalayish).
+
+The oversampling of the Ngwi-Burmese family in this project's data can at least in part alleviate the arguable underrepresentation of the languages when accounting for the size of the subfamily, but only adding one or two extra languages will not come close to balancing this statistic across the data. This is especially the case given that there are a number of subfamilies in which 50-100\% of languages have been sampled. Again, the qualitative nature of the analysis being undertaken means that the essentially unavoidable imbalance of this measure (languages sampled in a subfamily as a percentage of that subfamily's total number of languages) does not pose a problem as it does in quantitative statistical analyses such as those discussed above.
+
+\begin{table}
+  \centering
+  \begin{tabular}{l | l | l}
+    \hline
+    \citeA{Sagart2019Baye} & \citeA{ZhangM2019Baye} & \citeA{ZhangH2020Baye} \\
+    \hline
+    Angami-Pochuri & Bai & Bai* \\
+Ao & Black Mountain & Black Mountain \\
+Bai & Dimalish & Dura \\
+Black Mountain & Dura & Gongduk \\
+Dimalish & Gongduk & Lhokpu \\
+Dura & Hrusish & Mru \\
+East Bodish & Karbi & Naic \\
+Ersuish & Kho-Bwa & Newaric \\
+Gongduk & Lepcha & Pyu \\
+Hrusish & Lhokpu & Raji-Raute \\
+Karenic & Meithei &  \\
+Kho-Bwa & Midzuish &  \\
+Kukish & Mru &  \\
+Lepcha & Newaric &  \\
+Lhokpu & Pyu &  \\
+Magaric & Raji-Raute &  \\
+Meithei & Siangic &  \\
+Midzuish & Tshangla &  \\
+Mru & Tujia &  \\
+Naic &  &  \\
+Newaric &  &  \\
+Pyu &  &  \\
+Raji-Raute &  &  \\
+Siangic &  &  \\
+Tamangic &  &  \\
+Tujia &  &  \\
+Zeme &  &
+  \end{tabular}
+  \caption{Subfamilies not represented in the initial data or results of \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}. Internal isolates are given in italics. * Bai was specifically excluded in this study as the extensive borrowing from Sinitic languages would cause problems for the analysis.}\label{t:Methods:BayesMissingSubfamilies}
+\end{table}
+
+The unrepresented subfamilies shown in Table \ref{t:Methods:BayesMissingSubfamilies} are, to an extent, a good indicator for how representative the given samples are. Of course, some of the missing data is unavoidable, and is repeated in this project, namely for Raji-Raute, Gongduk, Black Mountain, Lhokpu\footnote{Though a wordlist was available in \citeA{Grollmann2018}}, and Pyu. \citeA{ZhangH2020Baye} specifically report that Bai (marked with an asterisk in Table \ref{t:Methods:BayesMissingSubfamilies}) was excluded due to high levels of borrowing from Sinitic languages, which causes problems when comparing cognates. For \citeA{ZhangH2020Baye}, this leaves only a few smaller subfamilies unrepresented, and for \citeA{ZhangM2019Baye} a few more, though most are still fairly small or underdocumented. \citeA{Sagart2019Baye}, however, in addition to the smaller or inaccessible subfamilies excluded by the others, has a few more glaring omissions. Namely, no data from any Karenic, Kukish languages were included, nor from the smaller and, at least according to \citesA{ZhangM2019Baye}{ZhangH2020Baye}, closely related Angami-Pochuri and Ao subfamilies. These omissions are, as has been already pointed out in \citeA{Hyslop2020Millet} and even in \citeA{ZhangH2020Baye}, problematic in a quantitative analysis in which a representative sample is a necessity, especially given the much wider coverage of \citeA{ZhangH2020Baye} compared to the two earlier studies. Even in cases where data are simply not available, the large gaps in documentary research across the \lfam\ family may mean that, at this stage, the sort of quantitative statistical research undertaken in these projects is simply not yet viable, at least until a truly representative sample can be developed. Such a sample would ot necessarily have to include data from all of the currently underdescribed languages, but would at least be able to be informed by a better understanding of relationships between families. For instance, if further evidence proves further that Lhokpu can be grouped into a Dimalish subfamily with Dhimal and Toto, then it need not be included separately if that family is already sufficiently represented. Similarly, further research on the other underdescribed languages of Bhutan, Gongduk and Black Mountain Monpa, may well allow them to quite clearly be aligned with existing subgroups, but may also distance them further from any clear classification, further necessitating their inclusion in a representative sample of the family.
+
+There is the potential here, however, for a certain circular logic in developing a sample to be used for research into phylogenies, in that the development of a representative sample needs to be informed by a general understanding of the phylogeny of the family in order to sufficiently and more or less equally survey all areas of the family. This understanding, however, is exactly the outcome the research itself is trying to reach. This is further confounded by the uncertainty the studies discussed here have around any reconstructions to deeper time depths, as is discussed below.
+
+Only briefly discussed in \citeA{ZhangH2020Baye} is the statistical confidence surrounding the various bifurcations given in the study's proposed phylogeny. While the study does not suggest that the given tree is clearly correct, it does suggest that the results of the analysis could be used to inform further studies into the history of the people of the Himalayas \cite[5]{ZhangH2020Baye}. The posterior probability of a given divergence is the calculated likelihood of the given branch being valid given the input data and starting parameters ranging from 0 (no  confidence) to 1 (complete confidence) \cite{Alfaro2006}. It can be seen as the probability that everything under a given branch belongs under that branch at the exclusion of others. For instance, the root of the tree will always have a posterior probability of 1, as the entire tree falls under it and there are no alternatives. While in biology, strongly supported clades need a posterior probability of 0.95, no such consesus has been reached in linguistics, with given thresholds for valid trees ranging from 0.7, 0.9, or with no threshold at all \cite{Dolin2022}. The middle level divergences in \citeA{ZhangH2020Baye} fall well below these thresholds, with the lowest, in a number of places, falling as low as 0.04 (or 4\% confidence). In one case, a proposed bifurcation is estimated to have occurred earlier than that of its proposed parent, which is not possible. The result of this is that for most divergences analysed to have occurred earlier that 4,000 years before present, there is little to no confidence from the analysis that the final output is correct. \citeA{ZhangH2020Baye} do note this in their result that they have over a posterior probability of over 0.95 for a number of clades at various levels. That is to say that there are a number of clades and subfamilies it does confidently claim, for the most part it cannot actually make any confident claims about their relationships to each other.\todo{I suggest in this footnote that the actual meaning of the trees as presented in these papers is lost to jargon for most linguists who would be reading. Is this the case for you?}\footnote{I discuss this in depth here as, while these figures are clearly presented in \citesA{Sagart2019Baye}{ZhangH2020Baye} and in the supplementary materials for \citeA{ZhangM2019Baye}, I do not believe the actual meaning of these figures would be particularly accessible to a linguist who did not otherwise specialise in this area. The results are provided faithfully and the well-supported clades are listed by \citeA[3]{ZhangH2020Baye}, but the extent to which many of the other clades are \textit{not} supported, and as such the extent to which the analyses do not particularly draw conclusions beyond what is possible with traditional methods, is not, I believe, made clear enough that a linguist working on \lfam\ languages would, on first read, understand the conclusions actually being drawn.} An exception to this is for the Sinitic languages, which were placed as an outgroup with a posterior probability of 0.8. Clades with posterior probabilities of over 0.8 (80\% confidence) have been highlighted on the figures above in red boxes, and can be seen as the clades about which the analysis is able to make a claim over. That is, in Figure \ref{f:Methods:Zhang2020} for example, there is sufficiently strong evidence to support the Kukish subfamily, as well as a clade of the Angami-Pochuri, Ao, Tangkhul, and Zeme subfamilies, but the branches connecting them do not have sufficiently strong evidence to view them as a valid claim.
+
+\citeA{ZhangM2019Baye} overall do not reach the same low posterior probabilities as in \citeA{ZhangH2020Baye}, though do still only report higher higher probabilities at smaller subfamily levels, with probabilities below 0.5 for many of the high level divergences. This suggests that, while more confident than the other analysis, it is still unable to make an solid claims regarding the relationships of well established clades to one another. \citeA{Sagart2019Baye} explicitly use a cutoff of 0.8 for their confident clades, and face a similarly uncertain high-level phylogeny. They do, however, report high confidence for a large clade including Tibetic, Qiangic, rGyalrongic, and Ngwi-Burmese languages they label ``Tibeto-Dulong'' (p. 10318) to a time depth of approximately 5,000 years before present. \citeA{ZhangH2020Baye} report a posterior probability of 0.33 for this grouping.
+
+With this noted, the uncertainty surrounding relationships between established subfamilies noted by \citeA{VanDriem2014} remains to an extent in these studies. Some relationships with a shallower time depth are reported (though inconsistently between analyses) to a larger scale than in the model used for this project, but at the highest level the relationships between different branches of the family remain unclear for both the more traditional comparative method and the more recent Bayesian analysis. This further supports the decision here to approach the development of a representative sample from a phylogenetically agnostic foundation.
+
+\section{Schema}\label{s:Methods:Schema}
+After initial data collection as described above, the notes and summaries written on each language (with reference back to the source material) were summarised into a table that marked whether or not a certain feature was present in a certain form or function in a given language. This schema is, of course, reductive, and no such format will be able to succinctly \textit{and} completely describe the full nature of even a single paradigm in a language. Rather, this schema provided an easy-to-access and easy-to-reference summary of a number of key features that were expected to be relevant to the analysis stages of the project, from which the source material can be more easily referenced. The schema can be divided in to four general sections: the scope and form of a given marking or paradigm, the function of the marking(s), the extent to which intersubjective reference has been described or suggested in the literature for the markings, and some other features such as the variety of functions in a single paradigm, or the presence of engagement marking on nominal or demonstrative structures (as per \citeA{EvansBergqvistSanRoque2018b}). Additionally, the schema does record if anything of note could be found in the literature at all (in the few cases where the answer to this is no, the rest of the schema is empty).
+
+In cases where a single language has multiple varied markings or paradigms, one record in the table will contain multiple `yes' responses to some features.
+
+\subsection{Scope and Form}
+This feature records where in a given clause the marking is located, and with what scope. Specifically, whether the marking occurs on Verbal Morphology, at the Noun Phrase level, on the Verb Phrase, or as a Discourse particle (i.e. at the speech act level). The specific forms of a given marking or paradigm are not recorded in the summary.
+
+For example in Kurtöp (East Bodish: Bhutan), the core paradigm in the perfective aspect marking features such as mirativity, egophoricity, and evidentiality, appears in the form of a closed paradigm of compulsory suffixes attached to the main verb of a clause \cite{Hyslop2018}. This is recorded with a + in the ``Verbal Morphology'' column of the Scope and Form section. Additionally, however, the same distinctions are marked in other domains with the use of specific copulas, recorded with a second + in the ``Verb Phrase'' column.
+
+\subsection{Function of Marking}
+The Function of Marking section describes the function of the form or forms in a paradigm in relation to the cross-linguistic categories of epistemic modalilty (EM), evidentiality, egophoricity, mirativity, and engagement. It is split into two subsections, the first recording instances of `prototypical' forms of a given category. That is, a column will have a + for instances where the given paradigm marks only the category in question, and where the paradigm closely reflects the definition of the category in the literature.
+
+For instance, the conjunct/disjunct paradigm in Kathmandu Newar (Newaric: Nepal), as originally described in \citeA{HaleNewar1980}, fits very closely with the definitions given for egophoricity to the point that it given as an illustrative example of egophoricity at its simplest level in \citeA[3]{EgoIntro}. As such, it would be marked with a + in the egophoricity column of the prototypcial subsection. In a language such as the aforementioned Kurtöp, however, the marking of mirativity, egophoricity, and evidentiality all occur on different forms in the single paradigm, which as a result does not strictly adhere to the definitions given for such categories in the literature \cites{DeLancey2012}{EgoIntro}{Aikhenvald2018Intro}.
+
+In these cases where it would be insufficient to represent a paradigm as adhering to any well-defined category, another subsection recording loose examples of a given category is used. In this case, while not strictly fitting the definitions for a single mirative, egophoric, or evidential paradigm, the paradigm would be marked as having some broad instance of all three.
+
+\subsection{Described Intersubjectivity}
+This section notes whether or not there are any cases of intersubjectivity either described or exemplified in the available literature on a given language, either in interrogative or declarative structures. This assessment is, however, reliant on the extent of literature coverage on a given language. While it is easy to give a definitive `yes' where evidence is given in the literature, in many cases there is simply no reference made to any intersubujective-like features or cases (such as the common occurence in evientials in interrogatives \cite{Aikhenvald2018Intro}). In these cases it is not possible to say that grammaticalised intersubjectivity \textit{does not} exist, but rather only that it has not yet been readily obseved.
+
+\subsection{Other Features}
+Finally, the schema records four other possible features that might be useful to quickly access and reference. These are the presence of mixed function paradigms, that is paradigms with forms that do not fit into a single established cross-linguistic category, the presence of nominal engagement as referred to in the introduction to this section (Section /ref{s:Methods:Schema}), the diachronic source for the the forms documented (where given), and whether or not forms are obligatory.
+
+The first of these, the mixed paradigms, could potentially fairly closely mirror the cases where no prototypical example of a category is identified, but with a key difference. Systems whereby some form of subjective or intersubjective marking (such as evidentiality in the example given below) is spread across a number of different domain's of a language's grammar do not fit into the aforementioned `prototypical' category, nor do they fit into this `mixed paradigm' group. For instance, in Meithei \cite[295]{Chelliah1997}, evidentiality is marked across a number of different domains in the grammar, such as derivational morphology, clitics, and complementation, as opposed to being marked by a single discrete paradigm. It is worth noting that this ``scattered'' marking of evidentiality is widespread, and is by no means ignored in the literature \cite[23]{Aikhenvald2014}. The example of Kurtöp, given above, however, does represent a mixed paradigm, where a single paradigm contains mulitple different functional categories.
+
+The presence of nominal engagement in \lfam\ languages has not been widely documented, but has the potential to give insights into the development of verbal or clause-level marking in the wider family where they do appear \todo{cite something here from PNG on development of engagement? or from the development of evid. in tibetan?}. Nominal engagement has been documented in Purik Tibetan \cite[Tibetic: India:][]{Zemp2021} and in Phola \cite[Ngwi-Burmese, PRC:][]{GonzalezPerez2023}.
+
+
+\subsection{Example}\label{ss:Methods:MagarExample}
+This section works through the classification of an example language to show how it this schema has been used in practise. Here, the description of Magar by \citeA{GrunowHarsta2008} is used as it features distinctions across a number of the areas being recorded in the schema. The epistemic system in Magar is split across all three discrete systems, marking inferential and reportative evidentials, miratives, and quotatives.
+
+\subsubsection{Brief Description}
+Miratives in Magar are marked in a variety of forms, either nominalisations or related constructions. In Example \ref{e:Methods:MagarMirativeIntro}, mirativity is marked the nominaliser \textit{-o} followed by a grammmaticalised copula \textit{le}. 
+
+\begin{exe}
+  \ex\label{e:Methods:MagarMirativeIntro}
+  \begin{xlist}
+    \ex
+    \gll thapa i-laŋ le \\
+    Thapa \textsc{p.dem-loc} \textsc{cop} \\
+    \glt `Thapa is here.' (non-mirative)
+
+    \ex 
+    \gll thapa i-laŋ le-o le \\
+    Thapa \textsc{p.dem-loc} \textsc{cop-hab} \textsc{impf} \\
+    \glt `(I realize to my surprise that) Thapa is here!' (mirative)
+  \end{xlist}
+  \cite[Magar,][480]{GrunowHarsta2008}
+\end{exe}
+
+\citeA[480]{GrunowHarsta2008} also gives one other nominaliser that can convey mirative meaning, a form \textit{cyo ~ cʌ}. The distribution of these forms tends to follow the person of the subject of the clause, with the latter form mainly used for third-person subjects and the former for subjects who are speech act participants, though Example \ref{e:Methods:MagarMirativeIntro} is a clear exeption to this. The forms appear to always reflect a speaker-origo, including in questions, or can reflect a character origo in narratives. Examples of speaker-origo in narratives for rhetorical effect are also given, though are described as ``feigned'' (p. 493). One example, reproduced in Example \ref{e:Methods:MagarMirativeAddOri}, may well show addressee-origo in a declarative construction. Here, the mirative is used both in an interrogative (\ref{e:Methods:MagarMirativeAddOri:q}) and confirmation of that question (\ref{e:Methods:MagarMirativeAddOri:a}). Given information being confirmed by the speaker cannot be in the moment new, an alternative explanation for the function of the mirative here is necessary. \citeA[486]{GrunowHarsta2008} explains the use of mirative in the response as not marking information as new to the speaker, but marking information as something she cannot mentally integrate. An alternative view, at least seeing this data in isolation, is that the interrogative here is an explanation of disbelief on the part of the first speaker, hence marked with the mirative, and that the second speaker is also reflecting the first speaker's expression of disbelief. This is to say that the second speaker is agreeing that the first speaker is perhaps correct to use the mirative construction, arguably reflecting their addressee's perspective.
+
+\begin{exe}
+  \ex \label{e:Methods:MagarMirativeAddOri}
+  \begin{xlist}
+    \ex \label{e:Methods:MagarMirativeAddOri:q}
+    \gll mi-ja ma-phunɦ-o le-sa si-cʌ ale \\
+    \textsc{poss}-child \textsc{neg}-{give birth}-\textsc{mir} \textsc{impf-infr} die-\textsc{att} \textsc{cop} \\
+    \glt `She just died, undelivered!?'
+
+    \ex \label{e:Methods:MagarMirativeAddOri:a}
+    \gll ã ma-phunɦ-o le-a \\
+    yes \textsc{neg}-{give birth}-\textsc{mir} \textsc{impf-pst} \\
+    \glt `Yes, undelivered!'
+  \end{xlist}
+  \cite[Magar,][487]{GrunowHarsta2008}
+\end{exe}
+
+Evidentiality in Magar is also marked across multiple grammatical domains. Direct first-hand evidence, or statements of general cultural fact are unmarked, inferential evidentials are marked with the verb suffix \textit{-sa} and reportatives are marked with a particle \textit{ta}. \citeA{GrunowHarsta2008} gives a minimal triplet of these three meanings, reproduced in Example \ref{e:Methods:MagarEvidIntro}.
+
+\begin{exe}
+  \ex \label{e:Methods:MagarEvidIntro}
+  \begin{xlist}
+    \ex Direct
+    \gll ho-se taɦ-raɦ-a \\
+    \textsc{d.dem-def} reach-come-\textsc{pst} \\
+    \glt `He has arrived.' (I see him.)
+
+    \ex Inferential
+    \gll ho-se taɦ-raɦ-le-sa-a \\
+    \textsc{d.dem-def} reach-come-\textsc{-impf-infr-pst} \\
+    \glt `He has arrived.' (I see his bag.)
+
+    \ex Reportative
+    \gll ho-se taɦ-raɦ-a ta \\
+    \textsc{d.dem-def} reach-come-\textsc{pst} \textsc{rep} \\
+    \glt `He has arrived.' (They say.)
+  \end{xlist}
+  \cite[Magar,][497]{GrunowHarsta2008}
+\end{exe}
+
+In addition to these forms, there is also a quotative construction for direct quotes, formed with a subordinate clause and the speech verb \textit{de} `say' (p. 498). Unlike in some languages, the grammaticalised forms given in Example \ref{e:Methods:MagarEvidIntro} are not obligatory, though it is not clear how this factors into Grunow-Hårsta's analysis of the direct evidential as null-marked.
+
+Both the inferential and reportative are used in interrogative structures, where they reflect the perspective of the addressee. Additionally, both are used in narratives, but with different functions. The inferential evidential is used in narratives when narrating a story told in images (see the Family Problems Picture Task in Section \ref{p:Methods:FamilyProblems}), as well as reflecting the character's perspective, both in direct speech from the character, and in narration. The reportative is used very widely in narrative, but references exclusively speaker perspective, marking the speaker's source of information for the narrative itself. The forms \textit{-sa} \textsc{infr} and \textit{ta} \textsc{rep}, being marked respectively as a verb suffix and separate particle, can cooccur (p. 513). This marks reportative evidence for the speaker, whose sources in turn had inferential evidence.
+
+Independent of these forms, Magar also has a set of epistemic modal markers which can cooccur with both miratives and evidentials, which can in turn cooccur with each other. On these grounds, Grunow-Hårsta describes these as three distinct systems within the grammar. Potentially, given the formal difference in the location of the marking between the inferential and reportative marking, this could be further expanded to the point that there is no single paradigm of mutually exclusive forms filling the same grammatical slot in Magar. This is not unheard of for epistemic systems, described as ``scattered'' systems by \citeA{Aikhenvald2004}, and is not uncommon in the region \cite[480-481]{GrunowHarsta2008}. In terms of the typology set out in \cite{Aikhenvald2004}, Magar would be a B1 system, marking visual, inferred, and reported evidence. As will be discussed in detail in Chapter \ref{c:Discussion}, this does not manage to fully characterise the overall epistemic marking system (in a broad sense) of scattered morphemes in Magar. This is to say, in a system where all forms are marked in different grammatical slots and can cooccur with other in seemingly any combination, there is less justification to treat the forms traditionally classified as \textsc{evidentiality} as separate systems beyond the traditional theoretical boundaries which I am advocating against in this analysis.
+
+\subsubsection{Representation in the Schema}
+Table \ref{t:Methods:SchemaExample} shows the representation of this description of Magar in the schema described. The first section, the Language Metadata, gives basic information on the language, including its coordinates according to Glottolog. The next section, Scope and Form, notes that there is evidence of grammatical epistemic marking, and that it appears both as verbal morphology (the nominaliser component of the mirative and the inferential suffix) and as aa discourse particle or at the speech act level (the copular component of the mirative and the reportative marker). The Function of Markings section notes that there is (albeit with limited description) a system of epistemic modality marking, as well as an `other' system that does not easily fit into the a single group. This other system is then noted in the next section to feature functions of both mirative and evidential meanings, referring to the scattered system described above. Described Intersubjectivity notes that there is clear reference to the addressee's perspective in interrogative constructions, and potentially in declaratives (see Example \ref{e:Methods:MagarMirativeAddOri}). Finally, in Other Features, no diachronic source is noted as none was given by \citeA{GrunowHarsta2008}, the fact that the system is not obligatory is noted, as well as the lack of mixed paradigm or noted nominal engagement marking.
+\begin{table}
+  \begin{tabular}{|l|l|}
+  \hline\hline
+  \multicolumn{2}{|l|}{Language Metadata} \\ \hline
+  Language & Magar \\ \hline
+  Subfamily & Magaric \\ \hline
+  Source & Grunow-Harsta 2008 \\ \hline
+  Glottolog Coordinates & 27.41, 87.06 \\ \hline \hline
+  \multicolumn{2}{|l|}{Scope and Form} \\ \hline
+  Evidence of epistemic marking & + \\ \hline
+  Verb Morphology & + \\ \hline
+  Noun Phrase &  \\ \hline
+  Verb Phrase &  \\ \hline
+  Discourse particle/speech act level & + \\ \hline \hline
+  \multicolumn{2}{|l|}{Function of Markings} \\ \hline
+  EM & + \\ \hline
+  Ev &  \\ \hline
+  Ego &  \\ \hline
+  Eng &  \\ \hline
+  Mir &  \\ \hline
+  Other? & + \\ \hline \hline
+  EM &  \\ \hline
+  Ev & + \\ \hline
+  Ego &  \\ \hline
+  Eng &  \\ \hline
+  Mir & + \\ \hline \hline
+  Term(s) used in source & Mirative, Direct/Factual, Reportative, Inferred \\ \hline \hline
+  \multicolumn{2}{|l|}{Desribed Intersubjectivity} \\ \hline
+  Evidence of IS in interrogative structures? & + \\ \hline
+  Evidence of IS in declarative structures? & +? {[}486-487{]}, (c) reads a bit like IS \\ \hline \hline
+  \multicolumn{2}{|l|}{Other Features} \\ \hline
+  Diachronic Source? &  \\ \hline
+  Obligatory & No \\ \hline 
+  Mixed Paradigm & No \\ \hline
+  Nominal Engagement & No \\ \hline \hline
+  \end{tabular}
+  \caption{Magar, described in \citeA{GrunowHarsta2008}, represented in the schema.}\label{t:Methods:SchemaExample}
+  \end{table}
+
+\section{Analysis}
+The analysis undertaken was, for reasons outlined in Section \ref{ss:Methods:RepSample}, primarily qualitative. This involved reading descriptions of epistemic systems in publications and sorting them into the schema, and using this broad overview to begin to draw preliminary theoretical and typological conclusions about the data overall. These preliminary conclusions were then able to be compared specifically to the collected data by referencing the summaries collected in the schema. That is, the qualitative nature of the analysis meant that the schema itself was not generally used directly for analysis, but as a point-of-reference database to quickly find relevant data and descriptions from the overall sample. In some cases, data from the schema have been plotted on a map using the coordinate data collected from Glottolog \cite{glottolog}, in particular as a major part of the historical analysis undertaken in Chapter \ref{c:Historical}.\todo{Is this necessary, too brief, alright?}
+
+\section{Field Methods}\label{s:Methods:FieldMethods}
+The opportunity arose during this project to collect first-hand data on Lhokpu (Subgroup unclear: Bhutan) to fill in a gap in the available data. As has been discussed above, Lhokpu has been potentially aligned with the Dimalish subfamily, and while the conclusions in \citeA{Grollmann2018} are certainly well supported, they have not necessarily been totally proven. As such, Lhokpu has been included in this study as an internal isolate.
+
+Lhokpu is spoken in a small number of villages in the Dophuchen and Tading gewogs of Samtse District, in  south-western Bhutan. There are two non-contiguous groups of speakers, one located about 15km up the Amo Chhu (River) from the other, which is in turn a similar distance upriver of Totopara, the village in which the potentially closely related language Toto is spoken. \citeA{Grollmann2018} estimate approximately 2500 speakers across all villages, many (potentially all) of whom also speak Nepali, and to a lesser extent, Dzongkha and English.
+
+For this project, limited time was available to collect data for analysis, and as such the data collected needed to efficiently reflect any epistemic-marking system that might exist in the language. With the time available (especially given this was a smaller component of the larger project), recording large amounts of natural and unprovoked dialogue, stories, and other content, and then identifying the relevant forms therein was not feasible. It can also be difficult to establish what the actual epistemic contet of forms used in these settings would be, as it may not be totally clear to a researcher what the relationships of the speaker and addressee are to any given piece of information. On the other hand, it has been noted that speakers are not typically consiously aware of epistemic distinctions in language, and as such it can be difficult to ask or directly elicit them \cite{Grzech2020}. As such, as middle ground approach was used here, in which elicitation activities were used to generate naturalistic conversation data within an established and controlled epistemic context. These activities in particular draw from the \citeA{Gawne2020} and her discussion on using such tools, as well as \citeA{Grzech2020}. 
+
+\subsection{Field Methods and Elicitation Activities}
+By establishing a set of contrastive epistemic contexts across the elicitation activities run, it is possible to, at least to a certain extent, ascertain more clearly the conditioning factors behind the selection of forms. The two primary activities that were run were the ``Family Problems Picture Task'' \cite{SanRoque2012a} and the ``Man and Tree Picture Sets'' \cite{Levinson1992}. These activities comprised the majority of the field work undertaken, and were supplemented by a small amount of elicitation of basic language structures and the collection of a wordlist.
+
+\paragraph{Family Problems Picture Task}\label{p:Methods:FamilyProblems}
+The Family Problems Picture Task was specifically developed with the elicitation of epistemic forms in mind \cite{SanRoque2012a}, and involves four parts. First, two participants are presented with a set of images \cite{Carroll2009} depicting various interactions between family members in a pseudo-random order\footnote{the order is random for the participants, but is given by San Roque et al to allow for consistency and easier analysis down the line, so analysts do not need to work out which image is being described.} and are asked to describe them. Next, they are asked to confer and place the images in an order that depicts a story, and finally are asked to tell the story, once in third-person and once in first-person.
+
+Across these parts, a number of different epistemic contexts are created. Table \ref{t:Methods:FamilyProblemsEvidentials} shows the these contexts, and the parts they are present in. Visual evidence can be for information can be found in the descriptions and discussion, as participants are seeing the images for the first time, and subsequently discussing their contents. Similarly, inferential evidence could also be found in both, though potentially more prominently in the discussion phase, as participants are piecing together a story from the illustrations, requiring them to draw inferences about the exact events depicted. The description phase also shows equal epistemic authority over the images for both participants, as neither one will have seen the activity before. This equal authority might also be reflected as shared information, new information (i.e. mirative), or non-origo authority. Non-origo authority is distinguished from equal authority in that while they both accurately describe the epistemic context created in the task, equal authority refers to systems encoding that both speech act participants have the same authority, but not the strength of that authority, whereas non-origo authority refers to systems encoding specifically the origo's (speaker in declarative, addressee in interrogative) lack of authority over the information at hand, but does not directly reflect the addressee's perspective. Participatory evidence, or egophoric evidence \cite[][see ]{Gawne2017}, could be marked in the first-person telling of the story, as could, potentially along with the other parts, factual or neutral evidence as per \citeA{Zemp2020}.
+
+\begin{table}  
+  \noindent\adjustbox{center}{\begin{tabular}{r|c|c|c|c}  
+   & Description & Discussion & Third-person telling & First-person telling \\
+  Visual evidence & ✔ & ✔ &  &  \\
+  Inferential evidence & ✔ & ✔ &  &  \\
+  Non-origo or equal authority & ✔ &  &  &  \\
+  Participatory evidence &  &  &  & ✔ \\
+  Factual or neutral evidence &  &  & ✔ & 
+  \end{tabular}}
+  \caption{Epistemic contexts covered by each part of the Family Problems Picture Task}\label{t:Methods:FamilyProblemsEvidentials}
+\end{table}
+
+
+In some cases, namely with the non-origo and equal authority, as well as the participatory and factual evidentials, the conditions for two of the given epistemic bases are met in a single part of the activity. That is to say that, for instance, participatory evidence and factual evidence could theoretically be triggered by the same epistemic context. They are, however, functionally distinct in theoretical terms and as such have been included separately. That being said, without further evidence or usage contexts that are able to distinguish, it would not be directly possible from the data produced by this activity alone to determine if a given form used in the first-person telling, as an example, is conditioned by direct speaker involvement in the form of participatory evidence, or by a broader higher origo-authority as seen in factual evidentials. The typology of these similar-yet-different epistemic bases is discussed in greater detail in Chapter \ref{s:Description:xxxxx}.
+
+\paragraph{Man and Tree Picture Sets}
+The Man and Tree Picture Sets \cite{Levinson1992} are a series of image sets depicting plastic figures in various arrangements. Within the sets, different images show different arrangements of the same objects. Three sets were used in this project, some of which were combinations or subsets of the sets initially given in \citeA{Levinson1992}, and as such are given their own labels. The first set, \textsc{balls}, has four images showing red and yellow balls in various spatial and colour configurations. The second, \textsc{sawdust}, depicts a small pot full of sawdust, a plant, and a basket, with the pot variously covered, uncovered, overflowing, or entirely absent. The last set, \textsc{pigs}, shows a number of men, pigs, and small bushes in various numbers and configurations. The first two sets are substantially smaller than the {pigs}, and were used to teach participants the activity, and as a sort of warm-up activity.
+
+The activity itself was run as a guessing game or director-matcher task, in which one participant, the matcher, has all images in the set laid out in front of them on cards, and the other, the director, has all images in a deck face-down. Between the participants is a partition such that the director cannot see the matcher's face-up array of images. One by one, the director draws a card and describes it to the matcher, who asks questions in turn, until the matcher is able to select which card the director has just drawn. They confirm that the card is correct, then repeat the process until all cards have been drawn.
+
+The activity was originally designed for the elicitation of spatial reference systems, for which it was very effective here (though the analysis stemming from this falls outside the scope of this thesis), but has been repurposed here with a degree of success for the elicitation of epistemics. As with the Family Problems Picture Task, the activity creates a number of different epistemic contexts, though with the simpler task with fewer stages, there are fewer epistemic contrasts developed. 
+
+The Man and Tree activity has fewer separate stages than the Family Problems activity, and has been presented in Table \ref{t:Methods:ManTreeEvidentials} divided into the speech acts of each participant. The Director Description refers to the initial description of the image, and subsequent further comments on the image in response to questions from the matcher, which comprise the other speech acts in the activity. Visual evidence can be seen primarily in the initial descriptions of the images from the director. In all cases, however, this task shows unequal epistemic authority (contrasted with the Family Problems activity), in that the director has sole access to the aforementioned visual evidence at all times, and the matcher is either polling that visual evidence in asking questions, or polling a more authoritative evidence in confirming if they have selected the correct image. The useful difference between these two uses of unequal epistemic authority (the director and the matcher) then, is that one is speaker-origo, with the speaker referencing their own awareness, and the other is, being interrogative, likely addressee-origo.
+
+\begin{table}
+  \begin{tabular}{r|c|c}
+   & Director Description & Matcher Questions \\
+  Visual Evidence & ✔ & \\
+  Unequal epistemic authority & ✔ & ✔ \\
+  Shifted Origo in Questions & & ✔
+  \end{tabular}
+  \caption{Epistemic contexts covered by different areas of the Man and Tree Picture Task}\label{t:Methods:ManTreeEvidentials}
+  \end{table}
+
+The contrast between the equal epistemic authority in the Family Problems activity and the unequal epistemic authority here is a further distinction that is potentially able to be drawn from these two tasks. In other cases, it was these confirmation questions polling clearly non-shared unequal knowledge that was able to shed light on an epistemic system potentially conditioned by epistemic authority \cite{Bodnaruk2023}. In this case in particular, however, speakers did not verbally confirm their image choices. It is not clear if this is a fault of how the task was explained, if it was a result of the social dynamics between the participants, or just unfortunate chance.
+
+\subsection{Outcomes}
+These activities benefit from a solid foundation of analysis on the language such that individual forms can be better identified and separated after the activities are transcribed and translated \cite{Bodnaruk2023}. The lack of this foundation was a hindrance to the full analysis of the data gained, however, it was still possible to confirm some epistemic distinctions that had been originally attested in the basic elicitation. Transcriptions and translations were produced primarily in the field in ELAN \cite{ELAN} together with local consultants, with some additional material being transcribed over WhatsApp after the conclusion of the field trip. Example \ref{e:Methods:LhokpuDistinction} shows the main epistemic contrast with a confident analysis from the elicitation activities. 
+
+\begin{exe}
+  \ex\label{e:Methods:LhokpuDistinction}
+  \begin{xlist}
+    \ex\label{e:Methods:LhokpuDistinction:mi1}
+    \gll nosam rang-ka [ganmo \textbf{mi}] \\
+    mind \textsc{pron-gen} [wife \textbf{\textsc{cop.exist}}] \\
+    \glt `In his mind, “My wife is there”.' (Family Problems)
+
+    \ex \label{e:Methods:LhokpuDistinction:mi2}
+    \gll ka-lok dze niʰ-pu \textbf{mi} \\
+    \textsc{1.sg-obl} dog two-\textsc{clf.gen} \textbf{\textsc{cop.exist}} \\
+    \glt `I have two dogs.' (Elicited)
+
+    \ex \label{e:Methods:LhokpuDistinction:miha1}
+    \gll kona i-du meʰ \textbf{mihã} \\
+    then \textsc{prox-loc} fire \textbf{\textsc{cop.exist.evd}} \\
+    \glt `Then here there is fire' (Man and Tree - Sawdust)
+
+    \ex \label{e:Methods:LhokpuDistinction:miha2}
+    \gll kanka it-dra \textbf{mihã} \\
+    old.man one-\textsc{clf.anim}  \textbf{\textsc{cop.exist.evd}} \\
+    \glt `There is one old man.' (Family Problems)\footnote{Speakers explained the use of the classifiers \textit{-dra} and \textit{-pu} as marking human and general referents, however the `human' classifier \textit{-dra} was occasionally used to refer to animals in the Man and Tree activity, along with the general classifier \textit{-pu}. No further classifiers have been identified yet.}
+  \end{xlist}
+  (Lhokpu)
+\end{exe}
+
+The form \textit{mi} is used as an existential copula in cases referring specifically to personal knowledge or experience, seen in \ref{e:Methods:LhokpuDistinction:mi1} where it reflects the personal insights of the character, and in \ref{e:Methods:LhokpuDistinction:mi2} where it reflects the privileged access of the speaker to information about themself. The alternative form \textit{mihã} is used in cases with direct visual evidence, in both \ref{e:Methods:LhokpuDistinction:miha1} and \ref{e:Methods:LhokpuDistinction:miha2} reflecting the speaker seeing parts of the images for the first time. Without further research, however, it is difficult to say exactly which of the contrastive aspects of the two epistemic contexts is responsible for the difference in forms. In any case, it is clear that there is a binary epistemic distinction on Lhokpu existential copulas, and that it is generally speaking a distinction between higher vs lower authority, with higher authority in the data occurring from personal insights or participatory/ego evidence, and lower authority from visual evidence.
+
+Less confident conclusions were also able to be tentatively drawn regarding epistemic marking in verbal morphology. A limited understanding of some areas of the phonology of Lhokpu limited the analysis that was able to be undertaken here. A verb suffix \textit{-aʰ} occurs throughout the data collected in the elicitation activities, but not in any directly elicited data. Notably, the directly elicited data, sentences that were translated directly from English or Dzongkha into Lhokpu by consultants, is devoid of epistemic context. While, of course, such context can be described or imagined, the challenges in consious awareness of the conditions on the usage of epistemic forms as discussed above mean that these described situations are not reliable indicators of the actual usage of epistemic markers. The suffix \textit{-aʰ} is potentially equivalent to a form \textit{-a(l)} given by \cite{Grollmann2018}, with the lateral coda (dropped word finally) debuccalised, mirroring a sound difference between the data collected in Jigme village in this project and Grollmann and Gerber's (2018) data, wherein Grollmann and Gerber's possessive pronoun suffix \textit{ŋa} is attested in Jigme as \textit{-ha}. It is this glottal coda that is particularly challenging in the analysis of the form, as its phonological behaviour is not yet clear. While it is certainly present in many words, and its presence appears to be contrastive, it is not yet clear if another attested verb suffix \textit{-a} is a separate morpheme or an allomorph of \textit{-aʰ} with the glottal coda deleted. It is also possible that the glottal coda is present but remains indetected in the analysis. It is here that the lacking foundational knowledge of phonology and basic verbal morphology on the language seriously begins to hinder the analysis that can be completed at this stage.
+
+\cite[20-21]{Grollmann2018} describe \textit{-a(l)} as marking something ``not personally experienced by the speaker or as not belonging to the personal knowledge of the speaker'', though do not provide examples. This functional description appears, at least at this stage, to work with the data collected here.
+
+\begin{exe}
+\ex\label{e:Methods:LhokpuVerbal}
+\begin{xlist}
+\ex \label{e:Methods:LhokpuVerbal:coda}
+\gll ŋ̥an dokm̥eŋ-su dzoŋ-do-\textbf{aʰ} \\
+person walking.stick-\textsc{com} stand-\textsc{prog-\textbf{evd?}} \\
+\glt `The person is standing with the stick.'
+
+\ex \label{e:Methods:LhokpuVerbal:nocoda}
+\gll siŋ-hõ hut-a dzoŋ-do-\textbf{a} le~le \\
+tree-\textsc{towards} look-? \textsc{asp-prog-\textbf{evd?}} downhill~\textsc{adv} \\
+\glt `Looking downhill towards a tree.'
+(Man and Tree - Pigs)
+\end{xlist}
+(Lhokpu)
+\end{exe}
+
+Example \ref{e:Methods:LhokpuVerbal} shows both \textit{-aʰ} and an occurence of \textit{-a} that appears particularly likely to be an allomorph of \textit{-aʰ}, in both cases reflecting new, direct visual evidence, that was not previously part of the speaker's integrated knowledge. Much like with \textit{mi} and\textit{mihã}, it is difficult to say if, as suggested by \citeA{Grollmann2018} for \textit{-a(l)}, the use of \textit{-aʰ} is conditioned by the speaker's prior knowledge of some state of affairs, or if it is conditioned by the visual evidence the speaker has for their knowledge of that state of affairs. Notably, earlier in example \ref{e:Methods:LhokpuVerbal:nocoda}, another instance of \textit{-a} is attested, at first glance here appearing to be a non-final marker connecting the verb \textit{hut} `look' with the finite-marked verb \textit{dzong} `sit', here marking an aspectual distinction. This non-final marker analysis does not seem to work for the emphasised marker, however, suggesting that, in lieu of an analysis that can account for both uses here, there are two functions or meanings for the suffix \textit{-a}, perhaps one of which is an allomorph of \textit{-aʰ}.
+
+Between these two domains in which a probable epistemic distinction has been observed, this is the total extent of the current analysis into epistemic marking in Lhokpu, and as such is the total data that can be included. As is the case with published descriptive material, it is difficult to distinguish confidently between a language lacking a certain functional contrast, and such a contrast simply not being described in the current analysis. As such, when reading wider literature, conclusions cannot readily be drawn about systems lacking features. This limitation extends to the data collected for Lhokpu, simply because the analysis is nowhere near complete enough to confidently exclude any features. Instead, it is possible to preliminarily describe the system as occuring across multiple domains of the language, and containing a number of contrastive forms, conditioned by the closeness of the origo to the information. This closeness may depend on evidence source (direct visual vs general knowledge), partipation or direct involvement, or some higher level claim of authority, though it is not yet clear if any single of these conditions is the sole relevant condition, or if it is in fact some combination thereof, or perhaps an entirely different condition.
