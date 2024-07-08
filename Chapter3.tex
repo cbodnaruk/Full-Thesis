@@ -1,12 +1,19 @@
 \chapter{Development of database}\label{c:Methods}
 \section{Overview}
-This chapter describes the data collection and analysis methodologies used in this project, specifically the features used to summarise data. Section \ref{s:Methods:Collection} will discuss the collection of data, including the steps taken to ensure a representative cross-section of the \lfam\ family. Within this, Section \ref{ss:Methods:Bayesian} compares the distribution of languages sampled with some other proposed phylogenies, in particular those developed through Bayesian analyses in \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}. It will also consider the usefulness of these methodologies and their results both in the development of a representative sample and in linguistics in general. A number of cases where there are multiple conflicting analyses are discussed in Section \ref{ss:Description:Conflicts}, including the decision-making process behind which analysis was ultimately used in this survey. Section \ref{s:Methods:Schema} will address the specific features used to separate and categorise the languages surveyed. The resulting findings will subsequently be presented in Chapter \ref{c:Description}.
+This chapter describes the development of the database of epistemic marking in \lfam\ languages to be used for analysis, and the methodological decisions that were made throughout. Section \ref{s:Methods:Collection} will discuss the collection of data, including the steps taken to ensure a representative cross-section of the \lfam\ family. Section \ref{s:Methods:Schema} will address the specific features used to separate and categorise the languages surveyed, namely the presence of various types of epistemic marking, reference to addresse perspective, among other features, as well as an example entry with a full explanation of Magar \cite[Magaric: Nepal][]{GrunowHarsta2008}. The resulting findings will subsequently be presented in Chapter \ref{c:Description}.
+
+It also discusses some insights gained in terms of working with sources
+
+A number of cases where there are multiple conflicting analyses are discussed in Section \ref{ss:Description:Conflicts}, including the decision-making process behind which analysis was ultimately used in this survey. 
 
 In order to ensure better coverage of the \lfam\ family in this survey (discussed further in Section \ref{ss:Methods:RepSample}), some fieldwork was conducted to fill in a gap in the available data, specifically on the Lhokpu language. Descriptive publication on the language are limited to \citeA{Grollmann2018}, a comparison of a word list and some basic grammatical forms with Dhimal and Toto (Dhimalish: Nepal and India respectively), which did not provide enough detail to include it in the survey. This fieldwork, detailed in Section \ref{s:Methods:FieldMethods}, allowed for the language to be included in the survey though its findings are at this stage still very preliminary.  
 
 \section{Collection}\label{s:Methods:Collection}
 \subsection{Developing a Representative Sample}\label{ss:Methods:RepSample}
+In conducting a large-scale survey of any language family, it is, especially in a family as large and undescribed as the \lfam\ family, impossible to consider every single language as would be methodologically speaking ideal. Instead, it is important to ensure that the languages survey, at best, as accurate a representation of the family as a whole as is possible. This ensures that major areas and subgroups of the family are not left out. Failure to make such considerations could mean missing data that is particularly noteworthy or substantially different to the norm, making any generalisations about the family invalid, or only applicable to some potentially arbitrary subset of the languages of the family. This was discussed in terms of the phylogenetic analyses presented in Section \ref{ss:Methods:Bayesian}, in which large groups (such as Karenic in \citeA{Sagart2019Baye}) or small divergent groups (such as Kho-Bwa or Siangic in \citesA{Sagart2019Baye}{ZhangM2019Baye}) are missed, along with their potentially informative data, potentially shifting results in the wrong direction.
+
 Section \ref{ss:THOverview:Subfamilies} introduced the set of subfamilies proposed by \citeA{VanDriem2014} to represent a phylogeny-agnostic view of the \lfam\ family. Using this set of subfamilies as a foundation for the selection of languages provides a solid foundation to ensure no language groups are missed, while also avoiding taking a position on the debates in the literature where it is likely not necessary or helpful. That being said, simply selecting languages from each subfamily in equal number will not necessarily solve the issues in representativeness surrounding the statistical studies discussed in Section \ref{ss:THOverview:HighLevelStructure}.
+
 
 \citeA{VanDriem2014}, while reflective of the state of description at its original time of writing, is at risk of being out of date by the current view of the family. For instance, more recent documentation work on Lhokpu, focussing on vocabulary and some verbal and nominal affixation, has suggested that the language is likely closely related to the Dhimalish languages of Dhimal and Toto \cite{Grollmann2018}. In addition to the linguistic evidence, the relationship is fairly easily justified geographically -- Lhokpu is spoken in about three Chiwogs or village blocks (Singye, Sangloong Sangteng, and Thongsa Tobchhenthang) in Bhutan's Samtse Dzongkhag, which are between 15 and 30 kilometres upstream of Totopara in India, where the Toto language is spoken \cite{Basumatary2016}. Both languages are geographically not contiguous, however, with Dhimalish, to which, interestingly, \citeA{Grollmann2018} suggest that Lhokpu appears more closely related. \citeA{Grollmann2018} also note that the Dhimalish subfamily including Dhimal and Toto is perhaps not as well proven or established as its inclusion in \citeA{VanDriem2014} might suggest, specifically that many of the shared forms are in fact shared much more widely than just Dhimal and Toto, and might therefore simply represent shared retentions from a much earlier proto-language. The geographic proximity of Lhokpu to Toto may also have little meaning for the historical development of the languages, as \citeA{VanDriem2004} suggests that Lhokpu (or its ancestor) may have at one time been much more widespread across Western Bhutan, and may in fact be a substrate under Dzongkha.
 
@@ -117,330 +124,15 @@ In practise, the effect of this is visible in the number of languages present in
 
 Languages themselves were selected based on available documentation, using Glottolog \cite{glottolog} as a reference database for descriptive work available. To avoid accidentally selecting a particularly abberant language and not properly representing a given subfamily, an initial goal of two languages per subfamily was set. For larger subfamilies, such as Ngwi-Burmese, Kukish, Tibetic, and Kiranti, more languages were surveyed both in an attempt to ensure even coverage of the larger subfamily, as well as because, in general research, more of these languages were referenced and therefore considered.
 
-There were a number of cases where it was possible to even survey two languages in a subfamily. The first case is, of course, the internal isolates discussed in Section \ref{ss:THOverview:Subfamilies}. In addition, there are a number of smaller subfamilies which do not have the descriptive coverage to allow two languages to be surveyed. Either there was only one described language in the subfamily, or there were multiple, but only one has any coverage of epistemic marking. This last point poses a problem, in that, in languages with more limited descriptive analyses available, it is difficult to tell if reference to epistemic marking as studied in this project is omitted as it would be outside the scope of the current stage of description, or because it simply does not exist in the language. There were also a small number of subfamilies for which no descriptive data could be found. The first of these, Lhokpu, will be discussed in greater detail below as the opportunity arose in the course of this project to undertake fieldwork in a Lhokpu community in Bhutan and fill the gap in the data (though, as mentioned above, Lhokpu may well be better classified as Dhimalish). Gongduk, another internal isolate spoken in Bhutan \cite{VanDriem2001b}, also had no available data. During the course of this project, a grammar of Raji (Raji-Raute: Nepal) appears to have been published, written by Dubi Nanda Dhakal, but I have not been able to find this. There is similarly no documentation available for the Digarish languages in English, and as such my information on these languages comes from personal communication with Rolf Hotz Molina and Naomi Peck, who are both working on PhD projects on these languages. For Digarish, and Midzuish, there are unpublished sketch grammars by Roger Blench available on his website, though these are specifically not for wider use so were not included in the survey.\todo{Should I email Roger about these?} Glottolog also notes a body of descriptive work on Kaman (Midzuish) in Mandarin, which was also not accessible for this project. Black Mountain Mönpa has a sketch grammar by \citeA{Hyslop2016}, which makes no reference to any forms relevant to this project. It is, however, not clear if this is as they do not occur, or simply have not yet been sufficiently described.
+There were a number of cases where it was possible to even survey two languages in a subfamily. The first case is, of course, the internal isolates discussed in Section \ref{ss:THOverview:Subfamilies}. In addition, there are a number of smaller subfamilies which do not have the descriptive coverage to allow two languages to be surveyed. Either there was only one described language in the subfamily, or there were multiple, but only one has any coverage of epistemic marking. This last point poses a problem, in that, in languages with more limited descriptive analyses available, it is difficult to tell if reference to epistemic marking as studied in this project is omitted as it would be outside the scope of the current stage of description, or because it simply does not exist in the language. There were also a small number of subfamilies for which no descriptive data could be found. The first of these, Lhokpu, will be discussed in greater detail below as the opportunity arose in the course of this project to undertake fieldwork in a Lhokpu community in Bhutan and fill the gap in the data (though, as mentioned above, Lhokpu may well be better classified as Dhimalish). Gongduk, another internal isolate spoken in Bhutan \cite{VanDriem2001b}, also had no available data. During the course of this project, a grammar of Raji (Raji-Raute: Nepal) appears to have been published, written by Dubi Nanda Dhakal, but I have not been able to find this. There is similarly no documentation available for the Digarish languages in English, and as such my information on these languages comes from personal communication with Rolf Hotz Molina and Naomi Peck, who are both working on PhD projects on these languages. For Digarish, and Midzuish, there are unpublished sketch grammars by Roger Blench available on his website, though these are specifically not for wider use so were not included in the survey.\todo{Should I email Roger about these?} Glottolog also notes a body of descriptive work on Kaman (Midzuish) in Mandarin, which was also not accessible for this project.
+
+In terms of the much larger families, oversampling the Ngwi-Burmese family by assessing more than the two languages as discussed above can at least in part alleviate the arguable underrepresentation of the languages when accounting for the size of the subfamily, but only adding one or two extra languages will not come close to balancing this statistic across the data. This is especially the case given that there are a number of subfamilies in which 50-100\% of languages have been sampled. Again, the qualitative nature of the analysis being undertaken means that the essentially unavoidable imbalance of this measure (languages sampled in a subfamily as a percentage of that subfamily's total number of languages) does not pose a problem as it does in quantitative statistical analyses such as those discussed above.
 
 With this goal of two languages per subfamily where possible, to be expanded upon after in larger subfamilies, languages were selected by the breadth of description available, as well as the recency of the description. That is, full published grammars were taken over doctoral and masters theses, and newer studies were taken over older ones. Published grammars were preferred as they will have gone through a more complete review process, and are often more in-depth than doctoral and especially masters theses. In any case, regardless of the level of review or detail for the publication, analyses were taken (where no alternative analyses exist, see Sunwar discussed in Section \ref{ss:Description:Conflicts}) to be accurate, and no attempts were made to reanalyse data presented. In some cases, the usage of terminology is discussed in relation to the description provided, and, especially in Section \ref{ss:Description:ClassByFunction} and Chapter \ref{c:Discussion}, theoretical conclusions are drawn about data based on the analysis available, but beyond what is explicitly stated. In this latter case, it is possible that there is further data which would prove wrong the analysis synthesised here, but which were not included in the publication as they were not seen to be necessary by the original author.
 
 Newer studies were preferred as they are more likely to discuss the categories and functions at issue in this project. As discussed in Chapter \ref{c:Introduction}, studies into perspective-marking in \lfam\ languages have become significantly more common over the past two decades, and much of the research undertaken prior to that, and even more so prior to the publication of \citeA{ChafeNichols1986}, either does not consider perspective-marking at all, or does so in a way that is less immediately accessible in the context of contemporary theories and frameworks. That is to say that it is often simply much easier to find the relevant information in a more recent publication.
 
 As was mentioned above, some further data has been used from languages that appear regularly or in relevant places throughout the literature, even if they were not initially selected. In particular, discussions of the epistemic system in Lhasa Tibetan and early Tibetic languages are common throughout the literature (see, for instance, \citesA{DeLancey2012}{Garrett2001}{Hill2012}{Hill2014}{Zemp2021}), an area of study which was particularly relevant to the diachronic considerations discussed in Chapter \ref{c:History}. These languages are in addition to the set of languages surveyed systematically here, and are not listed in \appref{a:TableOfLanguages} as such.
-
-\subsection{Comparison to Proposed Phylogenies}\label{ss:Methods:Bayesian}
-\todo{Note to Gwen and Lila: This section has sort of shifted from my original intention of comparing my sample with the trees presented here, as I wasn't sure how best to visually represent it. I also found I had more to say about the papers methodologically than I initially thought, so it's still a bit of a mess.}
-While, as a result of the uncertainty surround the actual historically accurate phylogeny of the \lfam\ family, it is not possible to compare the sample of languages selected for this project to the actual family to gauge its representativeness (this impossibility of course beign the primary reason for the use of the subfamilies proposed by \citeA{VanDriem2014}), it is possible to compare the sample to the various proposed phylogenies and assess how representative the sample is for each.
-
-Given their disagreement, and the discussion thus far about their methodology, this section will compare the phylogenies provided in \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}. Some other proposed phylogenies, such as that put forward in \citeA{STEDT}, are not included here as they remain largely agnostic about the family's structure outside of a few primary divisions. In Figures \ref{f:Methods:Sagart}-\ref{f:Methods:Zhang2020}, the trees given in their respective sources are reproduced to the subfamily level. That is, the branches are reproduced exactly, but rather than terminating in individual languages (as in \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}), or in other subfamilies, the branches terminate in the equivalent subfamily from the set used in this project given in Table \ref{t:Methods:SubfamilyLanguageCount}. While the branching structure of the subfamilies is accurately reproduced here, the time depth of the various divergences given in the Bayesian analyses is not.
-
-Not every subfamily is represented in every tree, a point which forms part of the criticism of the Bayesian analyses. This occurs for these analyses when a given sample did not include any data from a given subfamily, and therefore does not represent or account for it in the final result. Missing subfamilies for each of \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye} are given in Table \ref{t:Methods:BayesMissingSubfamilies}.
-
-\begin{figure}
-\centering
-  \scalebox{0.35}{\begin{forest} 
-   phylogeny,
-[\lfam 
-[
-  [,tikz={\node [draw,red,fit to=tree] {};}
-    [Kachinic]
-    [Brahmaputran]
-  ]
-  [Sinitic,tikz={\node [draw,red,fit to=tree] {};}]
-]
-[
-  [
-    [Karbi]
-    [,tikz={\node [draw,red,fit to=tree] {};}
-      [Tangkhul]
-      [Kukish]
-    ]
-  ]
-  [
-    [
-      [Chepang]
-      [
-        [Tshangla]
-        [,tikz={\node [draw,red,fit to=tree] {};}
-          [Tani]
-          [Digarish]
-        ]
-      ]
-      [Kiranti,tikz={\node [draw,red,fit to=tree] {};}]
-    ]
-    [
-      [W. Himalayish,tikz={\node [draw,red,fit to=tree] {};}]
-      [
-        [Nungish]
-        [,tikz={\node [draw,red,fit to=tree] {};}
-          [Tibetic]
-          [
-            [
-              [Qiangic]
-              [rGyalrongic]
-            ]
-            [Ngwi-Burmese]
-          ]
-        ]
-      ]
-    ]
-  ]
-]
-]
-\end{forest}}
-\caption{The \lfam\ family as per \citeA{Sagart2019Baye}, showing the positions of the subfamilies used in this project. Branches with over 80\% posterior probability (that is, branches with high confidence, see ) have been marked with a red box. Time depth has not been reproduced in this tree.}
-\label{f:Methods:Sagart}
-\end{figure}
-
-\begin{figure}
-  \centering
-  
-    \scalebox{0.3}{\begin{forest} 
-    phylogeny,
-  [\lfam 
-      [Sinitic,tikz={\node [draw,red,fit to=tree] {};}]
-      [
-          [
-            [Karen]
-            [,tikz={\node [draw,red,fit to=tree] {};}
-              [Kukish]
-              [
-                [Ao]
-                [
-                  [
-                    [Tangkhul]
-                    [Zeme]
-                  ]
-                  [Angami-Pochuri]
-                ]
-              ]
-            ]
-          ]
-          [
-            [,tikz={\node [draw,red,fit to=tree] {};}
-              [Kachinic]
-              [Brahmaputran]
-            ]
-            [
-              [
-                [Digarish]
-                [Tani]
-              ]
-              [
-                [
-                  [
-                    [Kiranti]
-                    [,tikz={\node [draw,red,fit to=tree] {};}
-                      [Chepang]
-                      [Magar]
-                    ]
-                  ]
-                  [Nungish,tikz={\node [draw,red,fit to=tree] {};}]
-                ]
-                [
-                  [West Himalayish]
-                  [
-                    [,tikz={\node [draw,red,fit to=tree] {};}
-                      [Tamangic]
-                      [
-                        [Tibetic]
-                        [East Bodish]
-                      ]
-                    ]
-                    [,tikz={\node [draw,red,fit to=tree] {};}
-                      [
-                        [Nàic]
-                        [
-                          [Ersuish]
-                          [
-                            [Qiangic*]
-                            [rGyalrongic*]
-                          ]
-                        ]
-                      ]
-                      [Ngwi-Burmese]
-                    ]
-                  ]
-                ]
-              ]
-            ]
-          ]
-      ]
-  ]
-  \end{forest}}
-  \caption{The \lfam\ family as per \citeA{ZhangM2019Baye}. *The phylogeny here does not in fact support these two subfamilies, but rather gives two rGyalrongic languages -- rGyalrong Maerkang (glottolog: Situ) and Caodeng (glottolog: Tshobdun) -- as an outgroup to the Qiangic clade, and two others -- Daofu and Ergong Danba (glottolog: both under Stau-dGebshes) are given as members of one of two Qiangic branches. Branches with over 80\% posterior probability have been marked with a red box. Time depth has not been reproduced in this tree.}\label{f:Methods:Zhang2019}
-  \end{figure}
-
-  \begin{sidewaysfigure}
-    \centering
-    
-      \scalebox{0.35}{\begin{forest} 
-phylogeny,
-    [\lfam 
-      [
-        [Sinitic,tikz={\node [draw,red,fit to=tree] {};}]
-        [
-          [,tikz={\node [draw,red,fit to=tree] {};}
-            [Lepcha]
-            [Kiranti]
-          ]
-          [
-            [
-              [W. Himalayish]
-              [
-                [Digarish,tikz={\node [draw,red,fit to=tree] {};}]
-                [,tikz={\node [draw,red,fit to=tree] {};}
-                  [Siangic]
-                  [Tani]
-                ]
-              ]
-            ]
-            [
-              [,tikz={\node [draw,red,fit to=tree] {};}
-                [Kachinic]
-                [Brahmaputran]
-              ]
-              [
-                [Kho-Bwa,tikz={\node [draw,red,fit to=tree] {};}]
-                [Hrusish,tikz={\node [draw,red,fit to=tree] {};}]
-              ]
-            ]
-            [
-              [
-                [
-                  [
-                    [Magaric*]
-                    [Karen,tikz={\node [draw,red,fit to=tree] {};}]
-                  ]
-                  [
-                    [Dhimalish]
-                    [
-                      [Magaric*]
-                      [Chepangic]
-                    ]
-                  ]
-                ]
-                [
-                  [Karbi]
-                  [
-                    [Kukish,tikz={\node [draw,red,fit to=tree] {};}]
-                    [
-                      [Meithei]
-                      [,tikz={\node [draw,red,fit to=tree] {};}
-                        [
-                          [Angami-Pochuri**]
-                          [Ao]
-                        ]
-                        [
-                          [Tangkhul]
-                          [
-                            [Zeme]
-                            [Angami-Pochuri**]
-                          ]
-                        ]
-                      ]
-                    ]
-                  ]
-                ]
-              ]
-              [
-                [
-                  [Midzuish]
-                  [Nungish,tikz={\node [draw,red,fit to=tree] {};}]
-                ]
-                [
-                  [
-                    [Tamangic,tikz={\node [draw,red,fit to=tree] {};}]
-                    [
-                      [Tshangla]
-                      [,tikz={\node [draw,red,fit to=tree] {};}
-                        [East Bodish]
-                        [Tibetic]
-                      ]
-                    ]
-                  ]
-                  [
-                    [Tujia]
-                    [
-                      [
-                        [rGyalrongic***]
-                        [,tikz={\node [draw,red,fit to=tree] {};}
-                          [
-                            [Ngwi-Burmese†]
-                            [Ersuish]
-                          ]
-                          [
-                            [Qiangic]
-                            [rGyalrongic***]
-                          ]
-                        ]
-                      ]
-                      [Ngwi-Burmese,tikz={\node [draw,red,fit to=tree] {};}]
-                    ]
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
-      ]
-    ]
-    \end{forest}}
-    \caption{The \lfam\ family as per \citeA{ZhangH2020Baye}. In this analysis, a number of van Driem's (2014) subfamilies are divided, with either single or multiple languages separated from the rest of their subfamily. These have been marked (*, **, ***, †) and are discussed in the text. Branches with over 80\% posterior probability have been marked with a red box. Time depth has not been reproduced in this tree.}\label{f:Methods:Zhang2020}
-    \end{sidewaysfigure}
-
-As discussed above, for each of the terminal nodes given in Figures \ref{f:Methods:Sagart}-\ref{f:Methods:Zhang2020} (that is, van Driem's fallen leaves), 1-3 languages has been sampled. While initially the intention of presenting Figures \ref{f:Methods:Sagart}-\ref{f:Methods:Zhang2020} was to compare the representativeness of this project's sample against their proposals for a phylogeny of the \lfam\ family, it is clear from \tabref{t:Methods:BayesMissingSubfamilies} that, in all cases, the coverage of this project is substantially larger, especially in terms of smaller language families or internal isolates. Because \citeA{VanDriem2014} categorised the entire family into generally very fine-grained subfamilies, there are no languages in any of the three studies that cannot be categorised into one of the subfamilies used in this project, and therefore that can initially be seen as gaps in this project's sample. Rather, to identify possible gaps in this survery's sample, it is necessary to identify locations where \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye} disagree with \citeA{VanDriem2014}. A number of small disagreements are noted for \citesA{ZhangM2019Baye}{ZhangH2020Baye}
-
-We can also consider areas where van Driem's (2014) larger subgroups are presented as multiple smaller subfamilies in the other data. Namely, \citeA{ZhangM2019Baye} divides the Ngwi-Burmese family into three classifications, diverging approximately 2,000 years ago. Taking these three branches (Loloish, Nusu, Burmish) as separate subfamilies for the sake of representativeness, then the sample for this project contains two Loloish (here: Ngwi) languages, one Burmish language, and no Nusu languages. As is discussed above, the Ngwi-Burmese subfamily is the largest by some margin, which gives some credence to a division into multiple smaller subfamilies. However, when considering the estimated age of the subfamily per the Bayesian analyses, the combined Ngwi-Burmese branch is a similar age to many of the other of van Driem's (2014) subfamilies represented in \citeA{ZhangM2019Baye} (which range from ~750 years old for Tani to ~3,000 years old for Kiranti), as well as in \citeA{ZhangH2020Baye}, in which the subfamilies vary in age from ~500 years old (Ersuish) to ~4,500 years old (West Himalayish). This is to say that although there are a great number of contemporary Ngwi-Burmese languages attested, the branch itself does not appear to be any older than many of the smaller branches used in this survey, and as such there is less of a reason to treat it as too large or too high-level.
-
-The oversampling of the Ngwi-Burmese family in this project's data can at least in part alleviate the arguable underrepresentation of the languages when accounting for the size of the subfamily, but only adding one or two extra languages will not come close to balancing this statistic across the data. This is especially the case given that there are a number of subfamilies in which 50-100\% of languages have been sampled. Again, the qualitative nature of the analysis being undertaken means that the essentially unavoidable imbalance of this measure (languages sampled in a subfamily as a percentage of that subfamily's total number of languages) does not pose a problem as it does in quantitative statistical analyses such as those discussed above.
-
-\begin{table}
-  \centering
-  \begin{tabular}{l | l | l}
-    \hline
-    \citeA{Sagart2019Baye} & \citeA{ZhangM2019Baye} & \citeA{ZhangH2020Baye} \\
-    \hline
-    Angami-Pochuri & Bai & Bai* \\
-Ao & Black Mountain & Black Mountain \\
-Bai & Dimalish & Dura \\
-Black Mountain & Dura & Gongduk \\
-Dimalish & Gongduk & Lhokpu \\
-Dura & Hrusish & Mru \\
-East Bodish & Karbi & Naic \\
-Ersuish & Kho-Bwa & Newaric \\
-Gongduk & Lepcha & Pyu \\
-Hrusish & Lhokpu & Raji-Raute \\
-Karenic & Meithei &  \\
-Kho-Bwa & Midzuish &  \\
-Kukish & Mru &  \\
-Lepcha & Newaric &  \\
-Lhokpu & Pyu &  \\
-Magaric & Raji-Raute &  \\
-Meithei & Siangic &  \\
-Midzuish & Tshangla &  \\
-Mru & Tujia &  \\
-Naic &  &  \\
-Newaric &  &  \\
-Pyu &  &  \\
-Raji-Raute &  &  \\
-Siangic &  &  \\
-Tamangic &  &  \\
-Tujia &  &  \\
-Zeme &  &
-  \end{tabular}
-  \caption{Subfamilies not represented in the initial data or results of \citesA{Sagart2019Baye}{ZhangM2019Baye}{ZhangH2020Baye}. Internal isolates are given in italics. * Bai was specifically excluded in this study as the extensive borrowing from Sinitic languages would cause problems for the analysis.}\label{t:Methods:BayesMissingSubfamilies}
-\end{table}
-
-The unrepresented subfamilies shown in Table \ref{t:Methods:BayesMissingSubfamilies} are, to an extent, a good indicator for how representative the given samples are. Of course, some of the missing data is unavoidable, and is repeated in this project, namely for Raji-Raute, Gongduk, Black Mountain, and Pyu. \citeA{ZhangH2020Baye} specifically report that Bai (marked with an asterisk in Table \ref{t:Methods:BayesMissingSubfamilies}) was excluded due to high levels of borrowing from Sinitic languages, which causes problems when comparing cognates. For \citeA{ZhangH2020Baye}, this leaves only a few smaller subfamilies unrepresented, and for \citeA{ZhangM2019Baye} a few more, though most are still fairly small or underdocumented. \citeA{Sagart2019Baye}, however, in addition to the smaller or inaccessible subfamilies excluded by the others, has a few more glaring omissions. Namely, no data from any Karenic, Kukish languages were included, nor from the smaller and, at least according to \citesA{ZhangM2019Baye}{ZhangH2020Baye}, closely related Angami-Pochuri and Ao subfamilies. These omissions are, as has been already pointed out in \citeA{Hyslop2020Millet} and even in \citeA{ZhangH2020Baye}, problematic in a quantitative analysis in which a representative sample is a necessity, especially given the much wider coverage of \citeA{ZhangH2020Baye} compared to the two earlier studies. Even in cases where data are simply not available, the large gaps in documentary research across the \lfam\ family may mean that, at this stage, the sort of quantitative statistical research undertaken in these projects is simply not yet viable, at least until a truly representative sample can be developed. Such a sample would ot necessarily have to include data from all of the currently underdescribed languages, but would at least be able to be informed by a better understanding of relationships between families. For instance, if further evidence proves further that Lhokpu can be grouped into a Dimalish subfamily with Dhimal and Toto, then it need not be included separately if that family is already sufficiently represented. Similarly, further research on the other underdescribed languages of Bhutan, Gongduk and Black Mountain Monpa, may well allow them to quite clearly be aligned with existing subgroups, but may also distance them further from any clear classification, further necessitating their inclusion in a representative sample of the family.
-
-There is the potential here, however, for a certain circular logic in developing a sample to be used for research into phylogenies, in that the development of a representative sample needs to be informed by a general understanding of the phylogeny of the family in order to sufficiently and more or less equally survey all areas of the family. This understanding, however, is exactly the outcome the research itself is trying to reach. This is further confounded by the uncertainty the studies discussed here have around any reconstructions to deeper time depths, as is discussed below.
-
-Only briefly discussed in \citeA{ZhangH2020Baye} is the statistical confidence surrounding the various bifurcations given in the study's proposed phylogeny. While the study does not suggest that the given tree is clearly correct, it does suggest that the results of the analysis could be used to inform further studies into the history of the people of the Himalayas \cite[5]{ZhangH2020Baye}. The posterior probability of a given divergence is the calculated likelihood of the given branch being valid given the input data and starting parameters ranging from 0 (no  confidence) to 1 (complete confidence) \cite{Alfaro2006}. It can be seen as the probability that everything under a given branch belongs under that branch at the exclusion of others. For instance, the root of the tree will always have a posterior probability of 1, as the entire tree falls under it and there are no alternatives. While in biology, strongly supported clades need a posterior probability of 0.95, no such consesus has been reached in linguistics, with given thresholds for valid trees ranging from 0.7, 0.9, or with no threshold at all \cite{Dolin2022}. The middle level divergences in \citeA{ZhangH2020Baye} fall well below these thresholds, with the lowest, in a number of places, falling as low as 0.04 (or 4\% confidence). In one case, a proposed bifurcation is estimated to have occurred earlier than that of its proposed parent, which is not possible. The result of this is that for most divergences analysed to have occurred earlier that 4,000 years before present, there is little to no confidence from the analysis that the final output is correct. \citeA{ZhangH2020Baye} do note this in their result that they have over a posterior probability of over 0.95 for a number of clades at various levels. That is to say that although there are a number of clades and subfamilies it does confidently claim, for the most part it cannot actually make any confident claims about the relationships of these lower level clades to each other.\footnote{I discuss this in depth here as, while these figures are clearly presented in \citesA{Sagart2019Baye}{ZhangH2020Baye} and in the supplementary materials for \citeA{ZhangM2019Baye}, I do not believe the actual meaning of these figures would be particularly accessible to a linguist who did not otherwise specialise in this area. The results are provided faithfully and the well-supported clades are listed by \citeA[3]{ZhangH2020Baye}, but the extent to which many of the other clades are \textit{not} supported, and as such the extent to which the analyses do not particularly draw conclusions beyond what is possible with traditional methods, is not, I believe, made clear enough that a linguist working on \lfam\ languages would, on first read, understand the conclusions actually being drawn.} An exception to this is for the Sinitic languages, which were placed as an outgroup with a posterior probability of 0.8. Clades with posterior probabilities of over 0.8 (80\% confidence) have been highlighted on the figures above in red boxes, and can be seen as the clades about which the analysis is able to make a claim over. That is, in Figure \ref{f:Methods:Zhang2020} for example, there is sufficiently strong evidence to support the Kukish subfamily, as well as a clade of the Angami-Pochuri, Ao, Tangkhul, and Zeme subfamilies, but the branches connecting them do not have sufficiently strong evidence to view them as a valid claim.
-
-\citeA{ZhangM2019Baye} overall do not reach the same low posterior probabilities as in \citeA{ZhangH2020Baye}, though do still only report higher higher probabilities at smaller subfamily levels, with probabilities below 0.5 for many of the high level divergences. This suggests that, while more confident than the other analysis, it is still unable to make an solid claims regarding the relationships of well established clades to one another. \citeA{Sagart2019Baye} explicitly use a cutoff of 0.8 for their confident clades, and face a similarly uncertain high-level phylogeny. They do, however, report high confidence for a large clade including Tibetic, Qiangic, rGyalrongic, and Ngwi-Burmese languages they label ``Tibeto-Dulong'' (p. 10318) to a time depth of approximately 5,000 years before present. \citeA{ZhangH2020Baye} report a posterior probability of 0.33 for this grouping.
-
-With this noted, the uncertainty surrounding relationships between established subfamilies noted by \citeA{VanDriem2014} remains to an extent in these studies. Some relationships with a shallower time depth are reported (though inconsistently between analyses) to a larger scale than in the model used for this project, but at the highest level the relationships between different branches of the family remain unclear for both the more traditional comparative method and the more recent Bayesian analysis. This further supports the decision here to approach the development of a representative sample from a phylogenetically agnostic foundation.
-
-
-
 
 \section{Data Collation}\label{s:Methods:Schema}
 \subsection{Database Overview}
@@ -474,7 +166,7 @@ In his initial descriptions of mirativity, \citeA{DeLanceyMirativity1997} gives 
 
 \citeA{Borchers2008} disagrees with this analysis, though concedes that she and DeLancey are working with data from different Sunwar-speaking communities, and notes that DeLancey's analysis is working with a smaller corpus than hers. Borchers suggests instead that \textit{'baak-} ``is used to express the general way that things are'', whereas \textit{tshə} ``denotes the concrete and recent state of affairs'' \cite[164]{Borchers2008}. \citeA{Hill2012} is also critical of DeLancey's analysis, though in an overall argument against mirativity as valid cross-linguistic category. That being said, Hill's criticism of the mirative analysis, while referencing \citeA{Borchers2008} for support, relies only on a reanalysis of the meagre data presented in \citeA{DeLanceyMirativity1997} (here in Example \ref{e:Description:SunwarMirative}) and a discussion of edge cases one would not reasonably expect DeLancey to have discussed given the level of detail in the description given in his paper.
 
-The question thus becomes one of which analysis to follow for this typology. That is, in order to enter data from Sunwar into the database, we must make a decision about whose analysis to follow. In this case, given Borchers, at least by her accounts, worked with substantially more data, and spent a much longer time in the field than DeLancey (who worked with a single speaker living in the United States \cite{DeLanceyMirativity1997}). This is, in all reality, a fairly minor decision. It is, in this case, a single point of data in a substantially larger database, and despite Hill's (2012) strong criticism of DeLancey's description, \citeA{Borchers2008} does give a number of possible reasons for the difference in analysis, and does not appear to go to the same length as Hill in actively attempting to refute DeLancey. There also continues to be other languages analysed as marking mirativity in the sample, and as such mirativity as a concept is still considered in this typological analysis.
+The question thus becomes one of which analysis to follow for this typology. That is, in order to enter data from Sunwar into the database, we must make a decision about whose analysis to follow. In this case, given Borchers, at least by her accounts, worked with substantially more data, and spent a much longer time in the field than DeLancey (who worked with a single speaker living in the United States \cite{DeLanceyMirativity1997}), the analysis in \citeA{Borchers2008} was used. This is, in all reality, a fairly minor decision. It is, in this case, a single point of data in a substantially larger database, and despite Hill's (2012) strong criticism of DeLancey's description, \citeA{Borchers2008} does give a number of possible reasons for the difference in analysis, and does not appear to go to the same length as Hill in actively attempting to refute DeLancey. There also continues to be other languages analysed as marking mirativity in the sample, and as such mirativity as a concept is still considered in this typological analysis.
 
 \paragraph{Lhasa Tibetan}
 There is a similar disagreement in the literature over the best way to analyse the evidential system in Lhasa Tibetan, again involving disagreement over the mirative between \citeA{DeLanceyMirativity1997} and \citeA{Hill2012}, though with a greater number of other possible analyses. Epistemic marking in Lhasa Tibetan varies between equative copular clauses, and existential copular, and verb clauses. Specifically, there are two epistemic bases in the equative copula system, compared to three in the existential copulas and verbal morphology \cite{DeLancey2017Tibetan}. These forms are given in Table \ref{t:Description:LhasaEpistemics}, adapted from \citeA[11]{Garrett2001} and using his labels for the 2-3 evidential bases. It is the precise labelling of these bases in a theoretical sense that has been debated in the literature.
