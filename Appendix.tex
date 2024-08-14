@@ -144,6 +144,7 @@ Between these two domains in which a probable epistemic distinction has been obs
 
 \chapter{Table of Languages}\label{a:TableOfLanguages}
 \begin{table}
+       
        \caption{Languages surveyed in representative sample as discussed in Section \ref{s:Methods:Schema}. Subfamilies with no data available are also listed, marked with †. In cases where no data is available \textit{and} there are multiple languages in the subfamily, no language is given either.}
        \label{t:Appendix:LanguageReferences}
 \end{table}
@@ -290,8 +291,49 @@ Between these two domains in which a probable epistemic distinction has been obs
        \hline
 \end{longtable}
 
-\chapter{Static Database}
+\chapter{Static Database}\label{a:StaticDatabase}
 Explain table and abbreviation key here
+This sections presents a static and limited version of the database introduced in \cref{c:Methods}. It is included here for the sake of completeness in the submission of this thesis. A full and more accessible version of the database (and one that will continue to be updated) is available at \url{https://cbodnaruk.com/database/}.
+
+Due to the size of the database and challenges in formatting it to fit in print, a number of column headings have been shortened, with a legend provided in Table \ref{t:Appendix:DatabaseLegend}
+\begin{table}
+       \centering
+       \caption{Legend for the abbreviated headers in the printed static database given in Table \ref{t:Appendix:StaticDatabase}}\label{t:Appendix:DatabaseLegend}
+       \begin{tabular}{r|l}
+              Abbreviation & Meaning \\
+              \hline
+              A & Language Metadata \\
+              \hline 
+              B & Evidence of Epistemic Marking \\
+              \hline 
+              C1 & Verb Morphology \\
+              C2 & Noun Phrase \\
+              C3 & Verb Phrase \\
+              C4 & Discourse Particle/Speech Act Scope \\
+              \hline 
+              D & Functions of Marking: Canonical \\
+              EM & Epistemic Modality \\
+              Ev & Evidentiality \\
+              Ego & Egophoricity \\
+              Eng & Engagement \\
+              Mir & Mirative \\
+              Oth & Other \\
+              \hline 
+              E & Functions of Marking: Non-Canonical \\
+              \hline 
+              F & Term(s) Used in Source \\
+              \hline 
+              G & Addressee Perspective \\
+              G1 & Interrogative Structures \\
+              G2 & Declarative Structures \\
+              \hline 
+              H & Other Features \\
+              H1 & Diachronic Source (if given) \\
+              H2 & Obligatory (if given) \\
+              H3 & Mixed Paradigm \\
+              H4 & Nominal Engagement \\ \hline
+       \end{tabular}
+\end{table} 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 % \usepackage[normalem]{ulem}
@@ -299,8 +341,14 @@ Explain table and abbreviation key here
 \begin{landscape}
        \begin{tiny}
        \begin{longtable}{p{1.5cm}p{1cm}p{1cm}|p{0.25cm}|p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}|p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}|p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}p{0.25cm}|p{1.5cm}|p{0.5cm}p{0.5cm}|p{1cm}p{0.25cm}p{0.25cm}p{0.25cm}}
-              \multicolumn{3}{l|}{A: Language Metadata} & \multirow{2}{*}{B} & \multicolumn{4}{l|}{C: Scope and Form} & \multicolumn{6}{l|}{D: Functions: Canonical} & \multicolumn{5}{l|}{E: Functions: Non-Can} & F & \multicolumn{2}{l|}{G: Addr} & \multicolumn{4}{l}{H: Other} \\
-Language & Subfamily & Coordinates &  & C1 & C2 & C3 & C4 & EM & Ev & Ego & Eng & Mir & Oth & EM & Ev & Ego & Eng & Mir &  & G1 & G2 & H1 & H2 & H3 & H4 \hline \endhead
+
+              \caption{A static version of the database introduced in \cref{c:Methods} and otherwise available at \url{https:cbodnaruk.com/database/}\label{t:Appendix:StaticDatabase}}\\
+              \multicolumn{3}{l|}{A: Language Metadata} & B & \multicolumn{4}{l|}{C: Scope and Form} & \multicolumn{6}{|l|}{D: Functions: Canonical} & \multicolumn{5}{l|}{E: Functions: Non-Can} & F & \multicolumn{2}{|l|}{G: Addr} & \multicolumn{4}{l}{H: Other} \\
+Language & Subfamily & Coordinates &  & C1 & C2 & C3 & C4 & EM & Ev & Ego & Eng & Mir & Oth & EM & Ev & Ego & Eng & Mir &  & G1 & G2 & H1 & H2 & H3 & H4 \\ \hline \endfirsthead
+
+\caption{continued}\\
+Language & Subfamily & Coordinates &  & C1 & C2 & C3 & C4 & EM & Ev & Ego & Eng & Mir & Oth & EM & Ev & Ego & Eng & Mir &  & G1 & G2 & H1 & H2 & H3 & H4 \\ \hline \endhead
+
 Poumai Naga & Angami-Pochuri & 26.12, 94.69 & + &  & + &  & + &  & + &  &  &  &  &  &  &  & + & + & evidential {[}277{]}, particle {[}333,336{]} (marking maybe mirative) & ? & + {[}138{]} demonstrative engagement &  &  & + & + \\
 Tenyidie & Angami-Pochuri & 25.68, 93.87 & -? &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
 Jejara & Ao & 26.21, 95.16 & + &  &  &  & + &  & + &  &  &  &  & + &  &  &  & + & Reportative, Mirative, Epsitemic Modal {[}144{]} & / & / & / &  &  &  \\
