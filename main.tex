@@ -33,13 +33,13 @@
 \setotherlanguages{tibetan}
 \setmainfont{Libertinus Serif}
 \newfontfamily\tibetanfont{Microsoft Himalaya}
-\usepackage[backend=biber,style=unified,maxcitenames=2,maxbibnames=99]{biblatex}
+\usepackage[backend=biber,style=unified,maxcitenames=2,maxbibnames=99,doi=false,url=false]{biblatex}
 \usepackage{amsmath}
 \usepackage{adjustbox}
 \usepackage{array}
 \usepackage[edges,linguistics]{forest}
 \usepackage{rotating}
-
+\DeclareFieldFormat{postnote}{#1}
 \newcounter{Appendix}
 \newcounter{Figure}
 \bibliography{sources}
